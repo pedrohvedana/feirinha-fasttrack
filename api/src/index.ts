@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import pedidosRouter from './routes/pedidos';
 import webhookRouter from './routes/webhook';
+import cardapioRouter from './routes/cardapio';
 
 type Bindings = {
   DB: D1Database;
@@ -28,5 +29,6 @@ app.get('/', (c) => {
 
 app.route('/pedidos', pedidosRouter);
 app.route('/webhook', webhookRouter);
+app.route('/cardapio', cardapioRouter);
 
 export default app;

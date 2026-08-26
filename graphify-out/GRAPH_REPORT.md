@@ -1,16 +1,16 @@
 # Graph Report - feirinha-fasttrack  (2026-08-26)
 
 ## Corpus Check
-- 22 files · ~3,574 words
+- 22 files · ~3,576 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 82 nodes · 108 edges · 10 communities
+- 82 nodes · 106 edges · 10 communities
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `082f1bac`
+- Built from commit: `7b692b8e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -51,7 +51,7 @@
 ## Communities (10 total, 0 thin omitted)
 
 ### Community 0 - "webhook.ts"
-Cohesion: 0.21
+Cohesion: 0.19
 Nodes (13): app, Bindings, Bindings, pedidosRouter, Bindings, MENSAGENS, webhookRouter, Env (+5 more)
 
 ### Community 1 - "App.jsx"
@@ -79,7 +79,7 @@ Cohesion: 0.33
 Nodes (3): api, ITENS_CARDAPIO, PAGAMENTO_LABELS
 
 ## Knowledge Gaps
-- **34 isolated node(s):** `Status`, `Fase 1: Setup Inicial`, `Fase 2: Backend API`, `Fase 3: Integração WhatsApp`, `Fase 4: Frontend React` (+29 more)
+- **36 isolated node(s):** `Status`, `Fase 1: Setup Inicial`, `Fase 2: Backend API`, `Fase 3: Integração WhatsApp`, `Fase 4: Frontend React` (+31 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 
 ## Suggested Questions
@@ -90,4 +90,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **What connects `Status`, `Fase 1: Setup Inicial`, `Fase 2: Backend API` to the rest of the system?**
-  _34 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _36 weakly-connected nodes found - possible documentation gaps or missing edges._

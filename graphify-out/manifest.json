@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "api/src/index.ts": {
-    "mtime": 1787774574.2266665,
-    "ast_hash": "f07752e1756f5235357ae6dfc845050c",
+    "mtime": 1787776549.4059794,
+    "ast_hash": "7df4aaaf1ad63033599c9629b1339bfe",
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1787775382.6403449,
-    "ast_hash": "fc0db2624a651c636621d87bafc64823",
+    "mtime": 1787776725.9660187,
+    "ast_hash": "bb1a297b30ef2d2b5700307f7f3e2bae",
     "semantic_hash": ""
   },
   "public/index.html": {

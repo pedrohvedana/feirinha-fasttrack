@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "public/src/App.jsx": {
-    "mtime": 1787771697.4333723,
-    "ast_hash": "d905f77ec21f977eb502d056bd79a98a",
+    "mtime": 1787775084.53993,
+    "ast_hash": "e82599a4faedf00fc7e91ac4c133f670",
     "semantic_hash": ""
   },
   "public/src/api.js": {
@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "public/src/pages/Dashboard.jsx": {
-    "mtime": 1787771880.7003002,
-    "ast_hash": "2abda05409dbcd0630af3d39046c96f0",
+    "mtime": 1787775245.6181934,
+    "ast_hash": "eca532ab88cd467d75d5a9b9e34c095b",
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1787771880.1203027,
-    "ast_hash": "c4582eb9d524d7dd189aeccf3858a21f",
+    "mtime": 1787775150.023228,
+    "ast_hash": "6c8e127047875e12a7a9e705cfd4e744",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
@@ -95,13 +95,23 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1787774887.7507837,
-    "ast_hash": "212688f6b8a42f8ed1a6b32f179d6dd0",
+    "mtime": 1787775382.6403449,
+    "ast_hash": "fc0db2624a651c636621d87bafc64823",
     "semantic_hash": ""
   },
   "public/index.html": {
     "mtime": 1787771598.1359646,
     "ast_hash": "244c7085f6dce00df6d7059596d8090e",
+    "semantic_hash": ""
+  },
+  "public/src/auth.jsx": {
+    "mtime": 1787775040.0628166,
+    "ast_hash": "f325ec5df9df0e1d7214b5c29c137bf0",
+    "semantic_hash": ""
+  },
+  "public/src/pages/Login.jsx": {
+    "mtime": 1787775064.3440607,
+    "ast_hash": "8369b61f1a42237bf344a1fbe065cad4",
     "semantic_hash": ""
   }
 }

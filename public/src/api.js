@@ -20,4 +20,9 @@ export const api = {
   confirmarPagamento: (id) => request(`/pedidos/${id}/confirmar-pagamento`, { method: 'POST' }),
   filaAtivas: () => request('/pedidos/fila/ativas'),
   statsHoje: () => request('/pedidos/stats/hoje'),
+  cardapio: () => request('/cardapio'),
+  cardapioTodos: () => request('/cardapio/todos'),
+  cardapioCriar: (dados) => request('/cardapio', { method: 'POST', body: JSON.stringify(dados) }),
+  cardapioAtualizar: (id, dados) => request(`/cardapio/${id}`, { method: 'PUT', body: JSON.stringify(dados) }),
+  cardapioExcluir: (id) => request(`/cardapio/${id}`, { method: 'DELETE' }),
 };

@@ -1,17 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { api } from '../api';
 import { Link } from 'react-router-dom';
-
-const ITENS_CARDAPIO = [
-  { nome: 'Pastel de Carne', preco: 8.00 },
-  { nome: 'Pastel de Queijo', preco: 7.50 },
-  { nome: 'Pastel de Frango', preco: 8.00 },
-  { nome: 'Coxinha', preco: 7.00 },
-  { nome: 'Empada', preco: 6.00 },
-  { nome: 'Água', preco: 3.00 },
-  { nome: 'Suco Natural', preco: 5.00 },
-  { nome: 'Refrigerante', preco: 5.00 },
-];
 
 const PAGAMENTO_LABELS = {
   pix: 'PIX',
@@ -27,13 +16,22 @@ export default function PedidoForm() {
   const [enviando, setEnviando] = useState(false);
   const [sucesso, setSucesso] = useState(null);
   const [erro, setErro] = useState(null);
+  const [cardapio, setCardapio] = useState([]);
+  const [carregandoCardapio, setCarregandoCardapio] = useState(true);
+
+  useEffect(() => {
+    api.cardapio()
+      .then((data) => setCardapio(data.results || []))
+      .catch(() => setErro('Erro ao carregar cardápio'))
+      .finally(() => setCarregandoCardapio(false));
+  }, []);
 
   function adicionarItem(item) {
     const existente = itens.find((i) => i.nome === item.nome);
     if (existente) {
       setItens(itens.map((i) => i.nome === item.nome ? { ...i, quantidade: i.quantidade + 1 } : i));
     } else {
-      setItens([...itens, { ...item, quantidade: 1 }]);
+      setItens([...itens, { nome: item.nome, preco: item.preco, quantidade: 1 }]);
     }
   }
 
@@ -120,25 +118,29 @@ export default function PedidoForm() {
 
         <div>
           <h2 className="text-lg font-semibold text-gray-900 mb-3">Cardápio</h2>
-          <div className="grid grid-cols-2 gap-2">
-            {ITENS_CARDAPIO.map((item) => {
-              const noCarrinho = itens.find((i) => i.nome === item.nome);
-              return (
-                <button
-                  key={item.nome} type="button"
-                  onClick={() => adicionarItem(item)}
-                  className={`p-3 rounded-xl border text-left transition ${
-                    noCarrinho
-                      ? 'border-emerald-300 bg-emerald-50'
-                      : 'border-gray-200 bg-white hover:border-gray-300'
-                  }`}
-                >
-                  <span className="font-medium text-sm text-gray-900 block">{item.nome}</span>
-                  <span className="text-emerald-600 font-bold text-sm">R$ {item.preco.toFixed(2)}</span>
-                </button>
-              );
-            })}
-          </div>
+          {carregandoCardapio ? (
+            <p className="text-gray-400 text-sm">Carregando cardápio...</p>
+          ) : (
+            <div className="grid grid-cols-2 gap-2">
+              {cardapio.map((item) => {
+                const noCarrinho = itens.find((i) => i.nome === item.nome);
+                return (
+                  <button
+                    key={item.id} type="button"
+                    onClick={() => adicionarItem(item)}
+                    className={`p-3 rounded-xl border text-left transition ${
+                      noCarrinho
+                        ? 'border-emerald-300 bg-emerald-50'
+                        : 'border-gray-200 bg-white hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="font-medium text-sm text-gray-900 block">{item.nome}</span>
+                    <span className="text-emerald-600 font-bold text-sm">R$ {item.preco.toFixed(2)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {itens.length > 0 && (

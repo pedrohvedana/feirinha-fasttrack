@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './auth';
 import PedidoForm from './pages/PedidoForm';
 import FilaPedidos from './pages/FilaPedidos';
 import Dashboard from './pages/Dashboard';
+import CardapioAdmin from './pages/CardapioAdmin';
 import Login from './pages/Login';
 
 function RotaProtegida({ children }) {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/fila" element={<RotaProtegida><FilaPedidos /></RotaProtegida>} />
             <Route path="/dashboard" element={<RotaProtegida><Dashboard /></RotaProtegida>} />
+            <Route path="/cardapio" element={<RotaProtegida><CardapioAdmin /></RotaProtegida>} />
           </Routes>
         </div>
       </BrowserRouter>

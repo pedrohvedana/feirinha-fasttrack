@@ -103,180 +103,15 @@
       "norm_label": "fase 5: deploy"
     },
     {
-      "label": "App.jsx",
-      "file_type": "code",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_app",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "app.jsx"
-    },
-    {
-      "label": "RotaProtegida()",
-      "file_type": "code",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "public_src_app_rotaprotegida",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "rotaprotegida()"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "public_src_app_app",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "app()"
-    },
-    {
-      "label": "auth.jsx",
-      "file_type": "code",
-      "source_file": "public/src/auth.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_auth",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "auth.jsx"
-    },
-    {
-      "label": "AuthContext",
-      "file_type": "code",
-      "source_file": "public/src/auth.jsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "public_src_auth_authcontext",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "authcontext"
-    },
-    {
-      "label": "AuthProvider()",
-      "file_type": "code",
-      "source_file": "public/src/auth.jsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "public_src_auth_authprovider",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "authprovider()"
-    },
-    {
-      "label": "useAuth()",
-      "file_type": "code",
-      "source_file": "public/src/auth.jsx",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "public_src_auth_useauth",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "useauth()"
-    },
-    {
-      "label": "Dashboard.jsx",
-      "file_type": "code",
-      "source_file": "public/src/pages/Dashboard.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_pages_dashboard",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "dashboard.jsx"
-    },
-    {
-      "label": "Dashboard()",
-      "file_type": "code",
-      "source_file": "public/src/pages/Dashboard.jsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "public_src_pages_dashboard_dashboard",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "dashboard()"
-    },
-    {
-      "label": "FilaPedidos.jsx",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "filapedidos.jsx"
-    },
-    {
-      "label": "STATUS_COLORS",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_status_colors",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_colors"
-    },
-    {
-      "label": "STATUS_LABELS",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_status_labels",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_labels"
-    },
-    {
-      "label": "FilaPedidos()",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_filapedidos",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "filapedidos()"
-    },
-    {
-      "label": "Login.jsx",
-      "file_type": "code",
-      "source_file": "public/src/pages/Login.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_pages_login",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "login.jsx"
-    },
-    {
-      "label": "Login()",
-      "file_type": "code",
-      "source_file": "public/src/pages/Login.jsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "public_src_pages_login_login",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "login()"
-    },
-    {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "api/src/index.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "api_src_index",
       "community": 0,
       "community_name": "webhook.ts",
-      "norm_label": "index.ts",
-      "id": "api_src_index"
+      "norm_label": "index.ts"
     },
     {
       "label": "Bindings",
@@ -284,10 +119,10 @@
       "source_file": "api/src/index.ts",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "api_src_index_bindings",
       "community": 0,
       "community_name": "webhook.ts",
-      "norm_label": "bindings",
-      "id": "api_src_index_bindings"
+      "norm_label": "bindings"
     },
     {
       "label": "app",
@@ -295,10 +130,175 @@
       "source_file": "api/src/index.ts",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "api_src_index_app",
       "community": 0,
       "community_name": "webhook.ts",
-      "norm_label": "app",
-      "id": "api_src_index_app"
+      "norm_label": "app"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "app.jsx",
+      "id": "public_src_app"
+    },
+    {
+      "label": "RotaProtegida()",
+      "file_type": "code",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "rotaprotegida()",
+      "id": "public_src_app_rotaprotegida"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "app()",
+      "id": "public_src_app_app"
+    },
+    {
+      "label": "auth.jsx",
+      "file_type": "code",
+      "source_file": "public/src/auth.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "auth.jsx",
+      "id": "public_src_auth"
+    },
+    {
+      "label": "AuthContext",
+      "file_type": "code",
+      "source_file": "public/src/auth.jsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "authcontext",
+      "id": "public_src_auth_authcontext"
+    },
+    {
+      "label": "AuthProvider()",
+      "file_type": "code",
+      "source_file": "public/src/auth.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "authprovider()",
+      "id": "public_src_auth_authprovider"
+    },
+    {
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "public/src/auth.jsx",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "useauth()",
+      "id": "public_src_auth_useauth"
+    },
+    {
+      "label": "Dashboard.jsx",
+      "file_type": "code",
+      "source_file": "public/src/pages/Dashboard.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "dashboard.jsx",
+      "id": "public_src_pages_dashboard"
+    },
+    {
+      "label": "Dashboard()",
+      "file_type": "code",
+      "source_file": "public/src/pages/Dashboard.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "dashboard()",
+      "id": "public_src_pages_dashboard_dashboard"
+    },
+    {
+      "label": "FilaPedidos.jsx",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "filapedidos.jsx",
+      "id": "public_src_pages_filapedidos"
+    },
+    {
+      "label": "STATUS_COLORS",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_colors",
+      "id": "public_src_pages_filapedidos_status_colors"
+    },
+    {
+      "label": "STATUS_LABELS",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_labels",
+      "id": "public_src_pages_filapedidos_status_labels"
+    },
+    {
+      "label": "FilaPedidos()",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "filapedidos()",
+      "id": "public_src_pages_filapedidos_filapedidos"
+    },
+    {
+      "label": "Login.jsx",
+      "file_type": "code",
+      "source_file": "public/src/pages/Login.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "login.jsx",
+      "id": "public_src_pages_login"
+    },
+    {
+      "label": "Login()",
+      "file_type": "code",
+      "source_file": "public/src/pages/Login.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "login()",
+      "id": "public_src_pages_login_login"
     },
     {
       "label": "pedidos.ts",
@@ -998,13 +998,59 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_index",
+      "target": "api_src_index_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_index",
+      "target": "api_src_index_bindings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_index",
+      "target": "api_src_routes_pedidos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_index",
+      "target": "api_src_routes_webhook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "public/src/App.jsx",
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_app_app",
-      "confidence_score": 1.0
+      "target": "public_src_app_app"
     },
     {
       "relation": "contains",
@@ -1013,9 +1059,9 @@
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_app_rotaprotegida",
-      "confidence_score": 1.0
+      "target": "public_src_app_rotaprotegida"
     },
     {
       "relation": "imports_from",
@@ -1025,9 +1071,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
+      "target": "public_src_auth"
     },
     {
       "relation": "imports",
@@ -1037,9 +1083,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_auth_authprovider",
-      "confidence_score": 1.0
+      "target": "public_src_auth_authprovider"
     },
     {
       "relation": "imports",
@@ -1049,9 +1095,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "imports_from",
@@ -1061,9 +1107,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_dashboard",
-      "confidence_score": 1.0
+      "target": "public_src_pages_dashboard"
     },
     {
       "relation": "imports",
@@ -1073,9 +1119,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_dashboard_dashboard",
-      "confidence_score": 1.0
+      "target": "public_src_pages_dashboard_dashboard"
     },
     {
       "relation": "imports_from",
@@ -1085,9 +1131,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_filapedidos",
-      "confidence_score": 1.0
+      "target": "public_src_pages_filapedidos"
     },
     {
       "relation": "imports",
@@ -1097,9 +1143,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_filapedidos_filapedidos",
-      "confidence_score": 1.0
+      "target": "public_src_pages_filapedidos_filapedidos"
     },
     {
       "relation": "imports_from",
@@ -1109,9 +1155,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_login",
-      "confidence_score": 1.0
+      "target": "public_src_pages_login"
     },
     {
       "relation": "imports",
@@ -1121,9 +1167,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_login_login",
-      "confidence_score": 1.0
+      "target": "public_src_pages_login_login"
     },
     {
       "relation": "imports_from",
@@ -1133,9 +1179,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app",
-      "target": "public_src_pages_pedidoform",
-      "confidence_score": 1.0
+      "target": "public_src_pages_pedidoform"
     },
     {
       "relation": "imports_from",
@@ -1157,9 +1203,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_app_rotaprotegida",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "imports",
@@ -1180,9 +1226,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_auth",
-      "target": "public_src_auth_authcontext",
-      "confidence_score": 1.0
+      "target": "public_src_auth_authcontext"
     },
     {
       "relation": "contains",
@@ -1191,9 +1237,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_auth",
-      "target": "public_src_auth_authprovider",
-      "confidence_score": 1.0
+      "target": "public_src_auth_authprovider"
     },
     {
       "relation": "contains",
@@ -1202,9 +1248,9 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_auth",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "imports_from",
@@ -1214,9 +1260,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_dashboard",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
+      "target": "public_src_auth"
     },
     {
       "relation": "imports_from",
@@ -1226,9 +1272,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
+      "target": "public_src_auth"
     },
     {
       "relation": "imports_from",
@@ -1238,9 +1284,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_login",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
+      "target": "public_src_auth"
     },
     {
       "relation": "imports",
@@ -1250,9 +1296,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_dashboard",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "calls",
@@ -1274,9 +1320,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "calls",
@@ -1298,9 +1344,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_login",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
+      "target": "public_src_auth_useauth"
     },
     {
       "relation": "calls",
@@ -1322,9 +1368,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_dashboard",
-      "target": "public_src_api",
-      "confidence_score": 1.0
+      "target": "public_src_api"
     },
     {
       "relation": "imports",
@@ -1334,9 +1380,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_dashboard",
-      "target": "public_src_api_api",
-      "confidence_score": 1.0
+      "target": "public_src_api_api"
     },
     {
       "relation": "contains",
@@ -1345,9 +1391,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_dashboard",
-      "target": "public_src_pages_dashboard_dashboard",
-      "confidence_score": 1.0
+      "target": "public_src_pages_dashboard_dashboard"
     },
     {
       "relation": "imports_from",
@@ -1357,9 +1403,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_api",
-      "confidence_score": 1.0
+      "target": "public_src_api"
     },
     {
       "relation": "imports",
@@ -1369,9 +1415,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_api_api",
-      "confidence_score": 1.0
+      "target": "public_src_api_api"
     },
     {
       "relation": "contains",
@@ -1380,9 +1426,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_filapedidos",
-      "confidence_score": 1.0
+      "target": "public_src_pages_filapedidos_filapedidos"
     },
     {
       "relation": "contains",
@@ -1391,9 +1437,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_status_colors",
-      "confidence_score": 1.0
+      "target": "public_src_pages_filapedidos_status_colors"
     },
     {
       "relation": "contains",
@@ -1402,9 +1448,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_status_labels",
-      "confidence_score": 1.0
+      "target": "public_src_pages_filapedidos_status_labels"
     },
     {
       "relation": "contains",
@@ -1413,79 +1459,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "public_src_pages_login",
-      "target": "public_src_pages_login_login",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_index_app"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_index_bindings"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_routes_pedidos"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_routes_pedidos_pedidosrouter"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_routes_webhook"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_routes_webhook_webhookrouter"
+      "target": "public_src_pages_login_login"
     },
     {
       "relation": "contains",
@@ -2149,5 +2125,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "082f1bac4dd89245af443ed3a8d054e125584a88"
+  "built_at_commit": "7b692b8ea6064ee29a2a17c994fb043b3bbe62fe"
 }
