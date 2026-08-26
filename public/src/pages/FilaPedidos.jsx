@@ -22,18 +22,22 @@ const STATUS_LABELS = {
 export default function FilaPedidos() {
   const [pedidos, setPedidos] = useState([]);
   const [carregando, setCarregando] = useState(true);
-  const { logout } = useAuth();
+  const logout = useAuth();
 
   async function carregar() {
     try {
       const data = await api.filaAtivas();
-      setPedidos(data);
+      setPedidos(data.results || []);
     } catch { /* silenciar */ } finally {
       setCarregando(false);
     }
   }
 
-  useEffect(() => { carregar(); const t = setInterval(carregar, 5000); return () => clearInterval(t); }, []);
+  useEffect(() => {
+    carregar();
+    const t = setInterval(carregar, 5000);
+    return () => clearInterval(t);
+  }, []);
 
   async function avancarStatus(id, statusAtual) {
     const proximo = { pago: 'em_preparo', em_preparo: 'pronto' }[statusAtual];
@@ -67,7 +71,10 @@ export default function FilaPedidos() {
         <div className="max-w-2xl mx-auto space-y-3">
           {pedidos.map((p) => {
             let itens = [];
-            try { itens = typeof p.itens_json === 'string' ? JSON.parse(p.itens_json) : p.itens_json; } catch { /* ignorar */ }
+            try {
+              const raw = typeof p.itens_json === 'string' ? JSON.parse(p.itens_json) : p.itens_json;
+              itens = Array.isArray(raw) ? raw : (raw ? [raw] : []);
+            } catch { /* ignorar */ }
             const statusColor = STATUS_COLORS[p.status] || 'bg-gray-100 text-gray-600';
             const podeAvancar = ['pago', 'em_preparo'].includes(p.status);
             return (
