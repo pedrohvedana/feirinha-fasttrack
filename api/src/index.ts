@@ -20,7 +20,7 @@ app.use('*', cors({
     'https://master.feirinha-ui.pages.dev',
     'https://feirinha.ciavedana.com.br',
   ],
-  allowMethods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
 
 app.get('/', (c) => {
