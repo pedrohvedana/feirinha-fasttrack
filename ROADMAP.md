@@ -43,5 +43,5 @@
 ### Fase 5: Deploy
 - [x] Deploy API Workers
 - [x] Deploy Frontend Pages
-- [ ] Configurar domínio
+- [x] Configurar domínio customizado (feirinha.ciavedana.com.br)
 - [x] Testar fluxo completo

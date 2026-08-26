@@ -7,6 +7,5 @@
   "5": "dependencies",
   "6": "postcss.config.js",
   "7": "tailwind.config.js",
-  "8": "vite.config.js",
-  "9": "PedidoForm.jsx"
+  "8": "vite.config.js"
 }

@@ -17,6 +17,7 @@ app.use('*', cors({
     'http://localhost:5173',
     'https://feirinha-ui.pages.dev',
     'https://master.feirinha-ui.pages.dev',
+    'https://feirinha.ciavedana.com.br',
   ],
   allowMethods: ['GET', 'POST', 'PATCH', 'DELETE'],
 }));
