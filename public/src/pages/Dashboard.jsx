@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { api } from '../api';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../auth';
 
 export default function Dashboard() {
   const [stats, setStats] = useState({ total: 0, entregues: 0, em_andamento: 0, receita_total: 0 });
   const [carregando, setCarregando] = useState(true);
+  const { logout } = useAuth();
 
   async function carregar() {
     try {
@@ -27,8 +29,11 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen p-4">
       <header className="max-w-2xl mx-auto mb-6">
-        <Link to="/" className="text-sm text-emerald-600 hover:underline">← Novo Pedido</Link>
-        <Link to="/fila" className="text-sm text-gray-400 hover:underline ml-4">Fila</Link>
+        <div className="flex items-center gap-4 mb-2">
+          <Link to="/" className="text-sm text-emerald-600 hover:underline">← Novo Pedido</Link>
+          <Link to="/fila" className="text-sm text-gray-400 hover:underline">Fila</Link>
+          <button onClick={logout} className="text-sm text-red-500 hover:underline ml-auto">Sair</button>
+        </div>
         <h1 className="text-3xl font-bold text-gray-900 mt-2">Dashboard</h1>
       </header>
 

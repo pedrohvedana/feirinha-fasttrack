@@ -1,0 +1,107 @@
+{
+  "api/package.json": {
+    "mtime": 1787770082.2485006,
+    "ast_hash": "30065095faf5e6067fb27948a0126d28",
+    "semantic_hash": ""
+  },
+  "api/schema.sql": {
+    "mtime": 1787770088.00061,
+    "ast_hash": "e1b460d978502e4b72fa662baf8092a3",
+    "semantic_hash": ""
+  },
+  "api/src/index.ts": {
+    "mtime": 1787774574.2266665,
+    "ast_hash": "f07752e1756f5235357ae6dfc845050c",
+    "semantic_hash": ""
+  },
+  "api/src/routes/pedidos.ts": {
+    "mtime": 1787774510.7799332,
+    "ast_hash": "8eb308b2bcf979379b3736ba3c6061b9",
+    "semantic_hash": ""
+  },
+  "api/src/routes/webhook.ts": {
+    "mtime": 1787774556.1964595,
+    "ast_hash": "54a8dcb990b4c9639d4baee81721c9b6",
+    "semantic_hash": ""
+  },
+  "api/src/services/whatsapp.ts": {
+    "mtime": 1787774472.5965376,
+    "ast_hash": "a270d8a4994702255c7b606be4d8d1e4",
+    "semantic_hash": ""
+  },
+  "api/test-api.js": {
+    "mtime": 1787771156.6193247,
+    "ast_hash": "43cb4b6dec0679957cbf5f45e5766a64",
+    "semantic_hash": ""
+  },
+  "api/tsconfig.json": {
+    "mtime": 1787770084.3093538,
+    "ast_hash": "94801624c15100de666130c1ddedd364",
+    "semantic_hash": ""
+  },
+  "public/package.json": {
+    "mtime": 1787771919.343066,
+    "ast_hash": "708766b22fdde9483b932ce67b7dc948",
+    "semantic_hash": ""
+  },
+  "public/postcss.config.js": {
+    "mtime": 1787771937.244885,
+    "ast_hash": "6b5c4cb81230b2fed05f0216b775c0f5",
+    "semantic_hash": ""
+  },
+  "public/src/App.jsx": {
+    "mtime": 1787771697.4333723,
+    "ast_hash": "d905f77ec21f977eb502d056bd79a98a",
+    "semantic_hash": ""
+  },
+  "public/src/api.js": {
+    "mtime": 1787772117.909135,
+    "ast_hash": "6978ecb5792c0e41f036fa6e4ca78570",
+    "semantic_hash": ""
+  },
+  "public/src/main.jsx": {
+    "mtime": 1787771606.1467617,
+    "ast_hash": "54a301507dcdfccf4e5565754374b5dc",
+    "semantic_hash": ""
+  },
+  "public/src/pages/Dashboard.jsx": {
+    "mtime": 1787771880.7003002,
+    "ast_hash": "2abda05409dbcd0630af3d39046c96f0",
+    "semantic_hash": ""
+  },
+  "public/src/pages/FilaPedidos.jsx": {
+    "mtime": 1787771880.1203027,
+    "ast_hash": "c4582eb9d524d7dd189aeccf3858a21f",
+    "semantic_hash": ""
+  },
+  "public/src/pages/PedidoForm.jsx": {
+    "mtime": 1787771879.342019,
+    "ast_hash": "f223b92386d32f02bdd169fde1f98a30",
+    "semantic_hash": ""
+  },
+  "public/tailwind.config.js": {
+    "mtime": 1787771562.9666588,
+    "ast_hash": "3346df3fd0a1ea3f84440703bf8fd2cb",
+    "semantic_hash": ""
+  },
+  "public/vite.config.js": {
+    "mtime": 1787771571.234341,
+    "ast_hash": "fbb2f4dbb4822e072b41801a8dd28405",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787770287.6129053,
+    "ast_hash": "0d89803f92a806122d8636a9142aadc9",
+    "semantic_hash": ""
+  },
+  "ROADMAP.md": {
+    "mtime": 1787774887.7507837,
+    "ast_hash": "212688f6b8a42f8ed1a6b32f179d6dd0",
+    "semantic_hash": ""
+  },
+  "public/index.html": {
+    "mtime": 1787771598.1359646,
+    "ast_hash": "244c7085f6dce00df6d7059596d8090e",
+    "semantic_hash": ""
+  }
+}

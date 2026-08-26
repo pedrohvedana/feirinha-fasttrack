@@ -24,7 +24,7 @@
 - [x] Configurar D1 no Cloudflare (obter database_id)
 - [x] Testar CRUD completo de pedidos
 - [x] Testar envio de mensagens WhatsApp
-- [ ] Criar autenticação balconista
+- [x] Criar autenticação balconista (PIN 1234)
 - [x] Deploy API Cloudflare Workers
 
 ### Fase 3: Integração WhatsApp
