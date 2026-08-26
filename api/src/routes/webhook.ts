@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { enviarMensagem } from '../services/whatsapp';
+import { enviarMensagem, mensagemPagamentoConfirmado, mensagemEmPreparo, mensagemPronto } from '../services/whatsapp';
 
 type Bindings = {
   DB: D1Database;
@@ -10,11 +10,11 @@ type Bindings = {
 
 const webhookRouter = new Hono<{ Bindings: Bindings }>();
 
-const MENSAGENS: Record<string, (nome?: string) => string> = {
-  pago: (nome) => `Olá${nome ? ` ${nome}` : ''}! Seu pagamento foi confirmado! 🎉\nEstá na fila de preparo.\nTempo estimado: 5-10 minutos.`,
-  em_preparo: (nome) => `Olá${nome ? ` ${nome}` : ''}! Seu pedido está sendo preparado agora! 👨‍🍳\nTempo estimado: 5 minutos.`,
-  pronto: (nome) => `Olá${nome ? ` ${nome}` : ''}! Seu pedido está PRONTO para retirada! ✅\nPode vir buscar no balcão.`,
-  cancelado: (nome) => `Olá${nome ? ` ${nome}` : ''}! Seu pedido foi cancelado.\nQualquer dúvida, fale conosco.`,
+const MENSAGENS: Record<string, (nome?: string, id?: string) => string> = {
+  pago: (nome, id) => mensagemPagamentoConfirmado(nome || 'Cliente', id || ''),
+  em_preparo: (nome, id) => mensagemEmPreparo(nome || 'Cliente', id || ''),
+  pronto: (nome, id) => mensagemPronto(nome || 'Cliente', id || ''),
+  cancelado: (nome) => `Olá ${nome || 'Cliente'}! Seu pedido foi cancelado. Qualquer dúvida, fale conosco.`,
 };
 
 webhookRouter.post('/pagamento-confirmado', async (c) => {
@@ -38,7 +38,7 @@ webhookRouter.post('/pagamento-confirmado', async (c) => {
      WHERE id = ?`
   ).bind(pedido_id).run();
 
-  const mensagem = MENSAGENS.pago(pedido.cliente_nome as string);
+  const mensagem = MENSAGENS.pago(pedido.cliente_nome as string, pedido_id);
   const whatsappOk = await enviarMensagem(c.env, pedido.whatsapp as string, mensagem);
 
   return c.json({
@@ -65,7 +65,7 @@ webhookRouter.post('/status/:id', async (c) => {
 
   const criarMensagem = MENSAGENS[status];
   if (criarMensagem) {
-    const mensagem = criarMensagem(pedido.cliente_nome as string);
+    const mensagem = criarMensagem(pedido.cliente_nome as string, id);
     const whatsappOk = await enviarMensagem(c.env, pedido.whatsapp as string, mensagem);
     return c.json({
       message: `Status atualizado para ${status}`,
@@ -76,4 +76,4 @@ webhookRouter.post('/status/:id', async (c) => {
   return c.json({ message: `Status atualizado para ${status}` });
 });
 
-export { webhookRouter };
+export default webhookRouter;

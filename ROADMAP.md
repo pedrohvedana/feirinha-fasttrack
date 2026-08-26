@@ -1,17 +1,18 @@
-# ROADMAP - Feirinha Fast Track
+# ROADMAP Feirinha Fast Track
 
 ## Status
-- **Projeto**: Feirinha Fast Track
-- **Stack**: Cloudflare Workers + D1 + React/Vite + Evolution API
-- **Início**: 26/08/2026
-- **Responsável**: Pedro
+
+**Projeto**: Feirinha Fast Track
+**Stack**: Cloudflare Workers + D1 + React/Vite + Evolution API
+**Início**: 26/08/2026
+**Responsável**: Pedro
 
 ---
 
 ## Fases
 
-### Fase 1: Setup Inicial ✅
-- [x] Criar estrutura pastas
+### Fase 1: Setup Inicial
+- [x] Criar estrutura de pastas
 - [x] Configurar package.json
 - [x] Criar wrangler.toml
 - [x] Criar schema.sql
@@ -19,28 +20,28 @@
 - [x] Criar rotas API
 - [x] Criar serviço WhatsApp
 
-### Fase 2: Backend API ⏳
-- [ ] Configurar D1 no Cloudflare (obter database_id)
-- [ ] Testar CRUD completo pedidos
-- [ ] Testar envio mensagens WhatsApp
+### Fase 2: Backend API
+- [x] Configurar D1 no Cloudflare (obter database_id)
+- [x] Testar CRUD completo de pedidos
+- [x] Testar envio de mensagens WhatsApp
 - [ ] Criar autenticação balconista
-- [ ] Deploy API Cloudflare Workers
+- [x] Deploy API Cloudflare Workers
 
-### Fase 3: Integração WhatsApp ⏳
-- [ ] Configurar Evolution API VPS
-- [ ] Testar envio mensagens texto
-- [ ] Implementar fluxo notificações automáticas
-- [ ] Adicionar confirmação pagamento webhook
+### Fase 3: Integração WhatsApp
+- [x] Configurar Evolution API VPS
+- [x] Testar envio de mensagens de texto
+- [x] Implementar fluxo de notificações automáticas
+- [x] Adicionar confirmação de pagamento via webhook
 
-### Fase 4: Frontend React ⏳
-- [ ] Inicializar React Vite Tailwind
-- [ ] Criar PedidoForm (cliente)
-- [ ] Criar FilaPedidos (balconista)
-- [ ] Criar Dashboard (stats)
-- [ ] Implementar auto-refresh
+### Fase 4: Frontend React
+- [x] Inicializar React Vite Tailwind
+- [x] Criar PedidoForm (cliente)
+- [x] Criar FilaPedidos (balconista)
+- [x] Criar Dashboard (stats)
+- [x] Implementar auto-refresh
 
-### Fase 5: Deploy ⏳
-- [ ] Deploy API Workers
-- [ ] Deploy Frontend Pages
+### Fase 5: Deploy
+- [x] Deploy API Workers
+- [x] Deploy Frontend Pages
 - [ ] Configurar domínio
-- [ ] Testar fluxo completo
+- [x] Testar fluxo completo

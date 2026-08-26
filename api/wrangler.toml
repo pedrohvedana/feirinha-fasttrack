@@ -8,6 +8,6 @@ database_name = "feirinha-db"
 database_id = "d68eb712-3202-4276-8a6b-4f7fc8bb3789"
 
 [vars]
-EVOLUTION_API_URL = "https://sua-vps.com.br"
-EVOLUTION_API_KEY = "sua-chave-api"
-EVOLUTION_INSTANCE = "feirinha"
+EVOLUTION_API_URL = "https://api.ciavedana.com.br"
+EVOLUTION_API_KEY = "FAA447A6E3D1-4145-88E2-15841962235D"
+EVOLUTION_INSTANCE = "ciavedana"

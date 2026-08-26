@@ -1,4 +1,5 @@
 import { Hono } from 'hono';
+import { enviarMensagem, mensagemPagamentoConfirmado, mensagemEmPreparo, mensagemPronto } from '../services/whatsapp';
 
 type Bindings = {
   DB: D1Database;
@@ -31,7 +32,7 @@ pedidosRouter.post('/', async (c) => {
 });
 
 pedidosRouter.get('/', async (c) => {
-  const { results } = await c.env.DB.prepare(
+  const results = await c.env.DB.prepare(
     `SELECT * FROM pedidos ORDER BY criado_em DESC LIMIT 50`
   ).all();
 
@@ -76,6 +77,26 @@ pedidosRouter.patch('/:id/status', async (c) => {
     return c.json({ error: 'Pedido não encontrado' }, 404);
   }
 
+  // Enviar WhatsApp conforme status
+  const pedido = await c.env.DB.prepare(
+    `SELECT * FROM pedidos WHERE id = ?`
+  ).bind(id).first();
+
+  if (pedido && pedido.whatsapp) {
+    const nome = pedido.cliente_nome || 'Cliente';
+    let mensagem = '';
+
+    if (status === 'em_preparo') {
+      mensagem = mensagemEmPreparo(nome, id);
+    } else if (status === 'pronto') {
+      mensagem = mensagemPronto(nome, id);
+    }
+
+    if (mensagem) {
+      await enviarMensagem(c.env, pedido.whatsapp as string, mensagem);
+    }
+  }
+
   return c.json({ message: `Status atualizado para ${status}` });
 });
 
@@ -91,9 +112,16 @@ pedidosRouter.post('/:id/confirmar-pagamento', async (c) => {
     return c.json({ error: 'Pedido não encontrado ou já confirmado' }, 404);
   }
 
+  // Buscar pedido para enviar WhatsApp
   const pedido = await c.env.DB.prepare(
     `SELECT * FROM pedidos WHERE id = ?`
   ).bind(id).first();
+
+  if (pedido && pedido.whatsapp) {
+    const nome = pedido.cliente_nome || 'Cliente';
+    const mensagem = mensagemPagamentoConfirmado(nome, id);
+    await enviarMensagem(c.env, pedido.whatsapp as string, mensagem);
+  }
 
   return c.json({
     message: 'Pagamento confirmado',
@@ -102,7 +130,7 @@ pedidosRouter.post('/:id/confirmar-pagamento', async (c) => {
 });
 
 pedidosRouter.get('/fila/ativas', async (c) => {
-  const { results } = await c.env.DB.prepare(
+  const results = await c.env.DB.prepare(
     `SELECT id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, criado_em
      FROM pedidos
      WHERE status IN ('pago', 'em_preparo', 'pronto')
@@ -115,10 +143,10 @@ pedidosRouter.get('/fila/ativas', async (c) => {
 pedidosRouter.get('/stats/hoje', async (c) => {
   const stats = await c.env.DB.prepare(
     `SELECT
-       COUNT(*) as total,
-       SUM(CASE WHEN status = 'entregue' THEN 1 ELSE 0 END) as entregues,
-       SUM(CASE WHEN status IN ('pago', 'em_preparo') THEN 1 ELSE 0 END) as em_andamento,
-       SUM(CASE WHEN pagamento_confirmado = 1 THEN valor_total ELSE 0 END) as receita_total
+      COUNT(*) as total,
+      SUM(CASE WHEN status = 'entregue' THEN 1 ELSE 0 END) as entregues,
+      SUM(CASE WHEN status IN ('pago', 'em_preparo') THEN 1 ELSE 0 END) as em_andamento,
+      SUM(CASE WHEN pagamento_confirmado = 1 THEN valor_total ELSE 0 END) as receita_total
      FROM pedidos
      WHERE date(criado_em) = date('now')`
   ).first();
@@ -126,4 +154,4 @@ pedidosRouter.get('/stats/hoje', async (c) => {
   return c.json(stats);
 });
 
-export { pedidosRouter };
+export default pedidosRouter;

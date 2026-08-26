@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { pedidosRouter } from './routes/pedidos';
-import { webhookRouter } from './routes/webhook';
+import pedidosRouter from './routes/pedidos';
+import webhookRouter from './routes/webhook';
 
 type Bindings = {
   DB: D1Database;
@@ -13,7 +13,11 @@ type Bindings = {
 const app = new Hono<{ Bindings: Bindings }>();
 
 app.use('*', cors({
-  origin: ['http://localhost:5173', 'https://feirinha.pages.dev'],
+  origin: [
+    'http://localhost:5173',
+    'https://feirinha-ui.pages.dev',
+    'https://master.feirinha-ui.pages.dev',
+  ],
   allowMethods: ['GET', 'POST', 'PATCH', 'DELETE'],
 }));
 
