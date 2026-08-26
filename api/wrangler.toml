@@ -1,0 +1,13 @@
+name = "feirinha-fasttrack-api"
+main = "src/index.ts"
+compatibility_date = "2024-08-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "feirinha-db"
+database_id = "d68eb712-3202-4276-8a6b-4f7fc8bb3789"
+
+[vars]
+EVOLUTION_API_URL = "https://sua-vps.com.br"
+EVOLUTION_API_KEY = "sua-chave-api"
+EVOLUTION_INSTANCE = "feirinha"
