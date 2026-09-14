@@ -18,3 +18,6 @@ api/*-output.txt
 api/*-results.txt
 api/first200.txt
 api/full-coverage.txt
+
+# graphify generated cache/artifacts
+graphify-out/cache/
