@@ -128,6 +128,19 @@ Seu pedido *#${idPedido}* foi cancelado por falta de pagamento.
 Qualquer dúvida, fale conosco.`;
 }
 
+export function mensagemLembretePix(nomeCliente: string, idPedido: string, minutosRestantes: number): string {
+  return `Olá ${nomeCliente}! ⏳
+
+Seu pedido *#${idPedido}* ainda aguarda o pagamento do *PIX*.
+Ele será cancelado em *${minutosRestantes} minutos* se o pagamento não for confirmado.
+
+Acompanhe: ${URL_RASTREIO_BASE}/${idPedido}`;
+}
+
+export function URL_Rastreio(pedidoId: string): string {
+  return `${URL_RASTREIO_BASE}/${pedidoId}`;
+}
+
 function formatarNumero(numero: string): string {
   let limpo = numero.replace(/[^0-9]/g, '');
   if (limpo.length === 11 && limpo.startsWith('0')) {

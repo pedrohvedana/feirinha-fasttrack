@@ -10,6 +10,7 @@ export type Bindings = Env & {
   WA_AKG_API_KEY: string;
   WA_AKG_WEBHOOK_SECRET: string;
   PIX_ACCESS_TOKEN: string;
+  PIX_LEMBRETE_MINUTOS?: string;
 };
 
 export function criarApp() {

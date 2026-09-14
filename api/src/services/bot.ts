@@ -1,5 +1,16 @@
 export type ItemCardapio = { id: number; nome: string; preco: number };
 
+const URL_RASTREIO_BASE = 'https://feirinha.ciavedana.com.br/rastrear';
+
+function URL_Rastreio(pedidoId: string): string {
+  return `${URL_RASTREIO_BASE}/${pedidoId}`;
+}
+
+function gerarIdPedido(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(6));
+  return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+}
+
 export type CarrinhoItem = {
   id: number;
   nome: string;
@@ -291,13 +302,11 @@ Escolha uma opção:
 
     if (passo === PASSO_PAGAMENTO) {
       if (texto === '1') {
-        await salvarConversa(numero, 'menu', [], nome);
-        await responder(numero, 'Financeiro integrado ao PIX chegando em breve. Por ora, confirme com o atendente. 💚');
+        await criarPedido(numero, carrinho, 'pix', nome);
         return;
       }
       if (texto === '2') {
-        await salvarConversa(numero, 'menu', [], nome);
-        await responder(numero, 'Combinado! Pagamento em *dinheiro* na entrega/retirada. 💵\nSeu pedido foi registrado.');
+        await criarPedido(numero, carrinho, 'dinheiro', nome);
         return;
       }
       if (texto === '0') {
@@ -307,6 +316,26 @@ Escolha uma opção:
       }
       await responder(numero, 'Escolha: 1️⃣ PIX 2️⃣ Dinheiro 0️⃣ Cancelar');
       return;
+    }
+  }
+
+  async function criarPedido(numero: string, carrinho: CarrinhoItem[], pagamentoTipo: 'pix' | 'dinheiro', nome?: string): Promise<void> {
+    const id = gerarIdPedido();
+    const total = calcularTotal(carrinho);
+    const itens = carrinho.map((i) => ({ id: i.id, nome: i.nome, preco: i.preco, qtd: i.qtd }));
+    await deps.db
+      .prepare(
+        `INSERT INTO pedidos (id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, atualizado_em)
+         VALUES (?, ?, ?, ?, ?, ?, 'aguardando_pagamento', CURRENT_TIMESTAMP)`,
+      )
+      .bind(id, nome ?? null, numero, JSON.stringify(itens), total, pagamentoTipo)
+      .run();
+    await salvarConversa(numero, 'menu', [], nome);
+
+    if (pagamentoTipo === 'pix') {
+      await responder(numero, `✅ *Pedido registrado!*\n\nSeu pedido *#${id}* está aguardando o pagamento do *PIX*.\nAcompanhe: ${URL_Rastreio(id)}\n\n*PIX chegando em breve — por ora confirme com o atendente.* 💚`);
+    } else {
+      await responder(numero, `✅ *Pedido registrado!*\n\nSeu pedido *#${id}* será pago em *dinheiro* na entrega/retirada. 💵\nAcompanhe: ${URL_Rastreio(id)}`);
     }
   }
 

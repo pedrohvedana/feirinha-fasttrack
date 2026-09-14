@@ -1,0 +1,76 @@
+name: Deploy Feirinha Fast Track
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  test-api:
+    name: Test API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - name: Install API deps
+        working-directory: api
+        run: npm ci
+
+      - name: Run tests
+        working-directory: api
+        run: npm test
+
+  deploy-api:
+    name: Deploy Worker API
+    needs: test-api
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - name: Install API deps
+        working-directory: api
+        run: npm ci
+
+      - name: Deploy Worker
+        working-directory: api
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  deploy-ui:
+    name: Deploy Frontend (Pages)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: public/package-lock.json
+
+      - name: Install UI deps
+        working-directory: public
+        run: npm ci
+
+      - name: Build
+        working-directory: public
+        run: npm run build
+
+      - name: Deploy Pages
+        working-directory: public
+        run: npx wrangler pages deploy dist --project-name=feirinha-ui
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

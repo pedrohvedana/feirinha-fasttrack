@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
   pagamento_tipo TEXT CHECK(pagamento_tipo IN ('pix', 'cartao', 'dinheiro')),
   pagamento_confirmado INTEGER DEFAULT 0,
   status TEXT DEFAULT 'aguardando_pagamento',
+  lembrete_enviado INTEGER DEFAULT 0,
   criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
   atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP
 );

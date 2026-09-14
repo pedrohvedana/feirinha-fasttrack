@@ -1,0 +1,1 @@
+﻿ALTER TABLE pedidos ADD COLUMN lembrete_enviado INTEGER DEFAULT 0;

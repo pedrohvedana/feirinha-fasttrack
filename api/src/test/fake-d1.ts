@@ -52,6 +52,23 @@ export function criarlaFakeD1(initial?: Partial<FakeD1State>) {
         tables.bot_msg_ids = tables.bot_msg_ids.filter((r) => r.key_id !== args[0]);
         return { meta: { changes: antes - tables.bot_msg_ids.length } };
       }
+      if (lower.includes('insert into pedidos')) {
+        const [id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo] = args;
+        const row: FakeRow = {
+          id: id || 'pedido-fake',
+          cliente_nome: cliente_nome ?? null,
+          whatsapp,
+          itens_json,
+          valor_total,
+          pagamento_tipo,
+          pagamento_confirmado: 0,
+          status: 'aguardando_pagamento',
+          criado_em: new Date().toISOString(),
+          atualizado_em: new Date().toISOString(),
+        };
+        tables.pedidos.push(row);
+        return { meta: { changes: 1 } };
+      }
       if (lower.includes('insert into conversas')) {
         const [numero, passo, carrinho, cliente_nome, paused] = args;
         const pausedFinal = paused ?? (args.length === 2 ? new Date(Date.now() + 10 * 60000).toISOString() : null);

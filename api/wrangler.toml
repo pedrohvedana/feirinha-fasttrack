@@ -16,6 +16,7 @@ WA_AKG_BASE_URL = "https://wa-akg.ciavedana.com.br"
 WA_AKG_SESSION = "feirinha"
 PIX_EXPIRACAO_MINUTOS = "30"
 PEDIDO_EXPIRA_MINUTOS = "15"
+PIX_LEMBRETE_MINUTOS = "8"
 
 [triggers]
 crons = ["*/5 * * * *"]

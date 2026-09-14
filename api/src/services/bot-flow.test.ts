@@ -100,6 +100,38 @@ describe('criarBot.onReceived', () => {
     expect(all).toContain('Bem-vindo');
     expect(all).toContain('99');
   });
+
+  it('confirmação de pagamento registra pedido no banco e envia link de rastreio', async () => {
+    const bot = criarBot(env.deps);
+    await bot.onReceived('5511999887766', '1', 'Carlos');
+    await bot.onReceived('5511999887766', '1', 'Carlos'); // X-Burger
+    await bot.onReceived('5511999887766', '2', 'Carlos'); // qtd
+    await bot.onReceived('5511999887766', '1', 'Carlos'); // confirmar
+    await bot.onReceived('5511999887766', '1', 'Carlos'); // pagamento PIX
+
+    expect(env.tables.pedidos.length).toBe(1);
+    const pedido = env.tables.pedidos[0];
+    expect(pedido.whatsapp).toBe('5511999887766');
+    expect(pedido.valor_total).toBe(30);
+    expect(pedido.pagamento_tipo).toBe('pix');
+
+    const all = env.said.join('\n');
+    expect(all).toContain('/rastrear/');
+    expect(all).toContain(pedido.id as string);
+  });
+
+  it('pagamento em dinheiro também registra pedido com tipo dinheiro', async () => {
+    const bot = criarBot(env.deps);
+    await bot.onReceived('5511999887766', '1', 'Carlos');
+    await bot.onReceived('5511999887766', '2', 'Carlos'); // Batata Frita
+    await bot.onReceived('5511999887766', '1', 'Carlos'); // qtd
+    await bot.onReceived('5511999887766', '1', 'Carlos'); // confirmar
+    await bot.onReceived('5511999887766', '2', 'Carlos'); // dinheiro
+
+    expect(env.tables.pedidos.length).toBe(1);
+    expect(env.tables.pedidos[0].pagamento_tipo).toBe('dinheiro');
+    expect(env.said.join('\n')).toContain('/rastrear/');
+  });
 });
 
 describe('criarBot.onSent', () => {
