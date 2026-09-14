@@ -7,6 +7,10 @@ type Bindings = {
   EVOLUTION_API_URL: string;
   EVOLUTION_API_KEY: string;
   EVOLUTION_INSTANCE: string;
+  WHATSAPP_PROVIDER: string;
+  WA_AKG_BASE_URL: string;
+  WA_AKG_API_KEY: string;
+  WA_AKG_SESSION: string;
   PIX_ACCESS_TOKEN?: string;
   PIX_PAGADOR_EMAIL?: string;
   PIX_EXPIRACAO_MINUTOS?: string;
