@@ -1,6 +1,6 @@
 {
   "0": "webhook.ts",
-  "1": "App.jsx",
+  "1": "useAuth",
   "2": "devDependencies",
   "3": "package.json",
   "4": "Fases",
@@ -8,5 +8,9 @@
   "6": "postcss.config.js",
   "7": "tailwind.config.js",
   "8": "vite.config.js",
-  "9": "PedidoForm.jsx"
+  "9": "api.js",
+  "10": "index.ts",
+  "11": "App.jsx",
+  "12": "FilaPedidos.jsx",
+  "13": "schema.sql"
 }

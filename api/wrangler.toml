@@ -11,3 +11,8 @@ database_id = "d68eb712-3202-4276-8a6b-4f7fc8bb3789"
 EVOLUTION_API_URL = "https://api.ciavedana.com.br"
 EVOLUTION_API_KEY = "FAA447A6E3D1-4145-88E2-15841962235D"
 EVOLUTION_INSTANCE = "ciavedana"
+PIX_EXPIRACAO_MINUTOS = "30"
+PEDIDO_EXPIRA_MINUTOS = "15"
+
+[triggers]
+crons = ["*/5 * * * *"]

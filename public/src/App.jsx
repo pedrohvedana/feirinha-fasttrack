@@ -5,9 +5,11 @@ import FilaPedidos from './pages/FilaPedidos';
 import Dashboard from './pages/Dashboard';
 import CardapioAdmin from './pages/CardapioAdmin';
 import Login from './pages/Login';
+import Cozinha from './pages/Cozinha';
+import PedidoRastreio from './pages/PedidoRastreio';
 
 function RotaProtegida({ children }) {
-  const { autenticado } = useAuth();
+  const autenticado = useAuth();
   return autenticado ? children : <Navigate to="/login" replace />;
 }
 
@@ -20,6 +22,8 @@ export default function App() {
             <Route path="/" element={<PedidoForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/fila" element={<RotaProtegida><FilaPedidos /></RotaProtegida>} />
+            <Route path="/cozinha" element={<RotaProtegida><Cozinha /></RotaProtegida>} />
+            <Route path="/rastrear/:id" element={<PedidoRastreio />} />
             <Route path="/dashboard" element={<RotaProtegida><Dashboard /></RotaProtegida>} />
             <Route path="/cardapio" element={<RotaProtegida><CardapioAdmin /></RotaProtegida>} />
           </Routes>

@@ -5,13 +5,13 @@
     "semantic_hash": ""
   },
   "api/schema.sql": {
-    "mtime": 1787770088.00061,
-    "ast_hash": "e1b460d978502e4b72fa662baf8092a3",
+    "mtime": 1787777056.9400654,
+    "ast_hash": "bbf5c3cd0e25b06a35a60192b7b31ff7",
     "semantic_hash": ""
   },
   "api/src/index.ts": {
-    "mtime": 1787774574.2266665,
-    "ast_hash": "f07752e1756f5235357ae6dfc845050c",
+    "mtime": 1787777126.3071332,
+    "ast_hash": "908735c9839319621fc237312d41624d",
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "public/src/App.jsx": {
-    "mtime": 1787775084.53993,
-    "ast_hash": "e82599a4faedf00fc7e91ac4c133f670",
+    "mtime": 1787777264.5984306,
+    "ast_hash": "6916ea82a6f8659fe2056e82b44fd53b",
     "semantic_hash": ""
   },
   "public/src/api.js": {
-    "mtime": 1787772117.909135,
-    "ast_hash": "6978ecb5792c0e41f036fa6e4ca78570",
+    "mtime": 1787777193.9163802,
+    "ast_hash": "80f9caabc2408955426a4c526094b23c",
     "semantic_hash": ""
   },
   "public/src/main.jsx": {
@@ -70,13 +70,13 @@
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1787775150.023228,
-    "ast_hash": "6c8e127047875e12a7a9e705cfd4e744",
+    "mtime": 1787785146.8143408,
+    "ast_hash": "3b32e12af226886803a0c1c5f56f61c6",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
-    "mtime": 1787771879.342019,
-    "ast_hash": "f223b92386d32f02bdd169fde1f98a30",
+    "mtime": 1787777223.441299,
+    "ast_hash": "fe0a395d78db47ccfe9e6e1421aa3f28",
     "semantic_hash": ""
   },
   "public/tailwind.config.js": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1787775382.6403449,
-    "ast_hash": "fc0db2624a651c636621d87bafc64823",
+    "mtime": 1787776725.9660187,
+    "ast_hash": "bb1a297b30ef2d2b5700307f7f3e2bae",
     "semantic_hash": ""
   },
   "public/index.html": {
@@ -112,6 +112,16 @@
   "public/src/pages/Login.jsx": {
     "mtime": 1787775064.3440607,
     "ast_hash": "8369b61f1a42237bf344a1fbe065cad4",
+    "semantic_hash": ""
+  },
+  "api/src/routes/cardapio.ts": {
+    "mtime": 1787777111.1578872,
+    "ast_hash": "e127be1df2a2d077df7acdb25e3d0bee",
+    "semantic_hash": ""
+  },
+  "public/src/pages/CardapioAdmin.jsx": {
+    "mtime": 1787777245.733572,
+    "ast_hash": "63a9c2224e60b9afb4e6974690b21b7b",
     "semantic_hash": ""
   }
 }

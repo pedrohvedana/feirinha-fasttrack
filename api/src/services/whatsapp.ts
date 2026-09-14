@@ -1,14 +1,12 @@
+const URL_RASTREIO_BASE = 'https://feirinha.ciavedana.com.br/rastrear';
+
 interface Env {
   EVOLUTION_API_URL: string;
   EVOLUTION_API_KEY: string;
   EVOLUTION_INSTANCE: string;
 }
 
-export async function enviarMensagem(
-  env: Env,
-  numero: string,
-  mensagem: string
-): Promise<boolean> {
+export async function enviarMensagem(env: Env, numero: string, mensagem: string): Promise<boolean> {
   try {
     const numeroFormatado = formatarNumero(numero);
     console.log(`Enviando WhatsApp para ${numeroFormatado}...`);
@@ -44,39 +42,46 @@ export async function enviarMensagem(
 }
 
 export function mensagemPagamentoConfirmado(nomeCliente: string, idPedido: string): string {
-  return `Olá ${nomeCliente}! ✅
+  return `Olá ${nomeCliente}!
 
-Seu pedido *#${idPedido}* foi pago e já entrou na fila!
+Seu pedido *#${idPedido}* foi pago e entrou na fila!
 
-Aguarde, em breve começaremos a preparar seu pedido. 🍽️`;
+Aguarde, em breve começaremos a preparar seu pedido. 🍽️
+
+Acompanhe o status: ${URL_RASTREIO_BASE}/${idPedido}`;
 }
 
 export function mensagemEmPreparo(nomeCliente: string, idPedido: string): string {
-  return `Olá ${nomeCliente}! 🔥
+  return `Olá ${nomeCliente}!
 
 Seu pedido *#${idPedido}* está sendo preparado agora!
 
-Tempo estimado: 5-10 minutos.`;
+Tempo estimado: 5-10 minutos.
+
+Acompanhe o status: ${URL_RASTREIO_BASE}/${idPedido}`;
 }
 
 export function mensagemPronto(nomeCliente: string, idPedido: string): string {
-  return `Olá ${nomeCliente}! 🎉
+  return `Olá ${nomeCliente}!
 
 Seu pedido *#${idPedido}* está *PRONTO*!
 
-Pode vir buscar no balcão. Obrigado pela preferência! 😊`;
+Pode vir buscar no balcão. Obrigado pela preferência! 😊
+
+Acompanhe o status: ${URL_RASTREIO_BASE}/${idPedido}`;
+}
+
+export function mensagemCancelado(nomeCliente: string, idPedido: string): string {
+  return `Olá ${nomeCliente}!
+
+Seu pedido *#${idPedido}* foi cancelado por falta de pagamento.
+
+Qualquer dúvida, fale conosco.`;
 }
 
 function formatarNumero(numero: string): string {
   let limpo = numero.replace(/\D/g, '');
-
-  if (limpo.startsWith('55')) {
-    return limpo;
-  }
-
-  if (limpo.length === 11 || limpo.length === 10) {
-    return `55${limpo}`;
-  }
-
+  if (limpo.startsWith('55')) return limpo;
+  if (limpo.length === 11 || limpo.length === 10) return `55${limpo}`;
   return limpo;
 }
