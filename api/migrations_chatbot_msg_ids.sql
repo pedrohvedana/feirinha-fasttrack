@@ -1,0 +1,5 @@
+-- Dedupe de eventos webhook WA-AKG
+CREATE TABLE IF NOT EXISTS msg_ids (
+  id TEXT PRIMARY KEY,
+  criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);

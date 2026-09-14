@@ -9,3 +9,12 @@ deploy/wa-akg/.env
 deploy/wa-akg/qr.html
 deploy/wa-akg/qr.txt
 deploy/wa-akg/set-apikey.js
+
+# Test/coverage artifacts
+api/coverage/
+api/coverage*.txt
+api/test-*.txt
+api/*-output.txt
+api/*-results.txt
+api/first200.txt
+api/full-coverage.txt

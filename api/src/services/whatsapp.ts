@@ -4,7 +4,7 @@ export interface Env {
   EVOLUTION_API_URL: string;
   EVOLUTION_API_KEY: string;
   EVOLUTION_INSTANCE: string;
-  WHATSAPP_PROVIDER: string;    // 'evolution' | 'wa-akg'
+  WHATSAPP_PROVIDER: string; // 'evolution' ou 'wa-akg'
   WA_AKG_BASE_URL: string;
   WA_AKG_API_KEY: string;
   WA_AKG_SESSION: string;
@@ -22,7 +22,7 @@ async function enviarViaEvolution(env: Env, numero: string, mensagem: string): P
       `${env.EVOLUTION_API_URL}/message/sendText/${env.EVOLUTION_INSTANCE}`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'apikey': env.EVOLUTION_API_KEY },
+        headers: { 'Content-Type': 'application/json', apikey: env.EVOLUTION_API_KEY },
         body: JSON.stringify({ number: numeroFormatado, text: mensagem }),
         signal: controller.signal,
       },
@@ -44,9 +44,10 @@ async function enviarViaEvolution(env: Env, numero: string, mensagem: string): P
 async function enviarViaWaAkg(env: Env, numero: string, mensagem: string): Promise<boolean> {
   try {
     if (!env.WA_AKG_API_KEY) {
-      console.warn('[WA-AKG] Chave (WA_AKG_API_KEY) não configurada. Pulando.');
+      console.warn('[WA-AKG] Chave WA_AKG_API_KEY não configurada. Pulando.');
       return false;
     }
+
     const jid = formatarNumero(numero).replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     const url = `${env.WA_AKG_BASE_URL}/api/messages/${env.WA_AKG_SESSION}/${jid}/send`;
     const controller = new AbortController();
@@ -58,11 +59,13 @@ async function enviarViaWaAkg(env: Env, numero: string, mensagem: string): Promi
       signal: controller.signal,
     });
     clearTimeout(timer);
+
     if (!response.ok) {
       const error = await response.text();
       console.error(`[WA-AKG] Erro: ${response.status} - ${error}`);
       return false;
     }
+
     console.log('[WA-AKG] Mensagem enviada com sucesso.');
     return true;
   } catch (error) {
