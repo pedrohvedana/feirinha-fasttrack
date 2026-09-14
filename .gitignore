@@ -3,3 +3,9 @@ node_modules/
 .dev.vars
 dist/
 .cache/
+
+# WA-AKG deploy secrets
+deploy/wa-akg/.env
+deploy/wa-akg/qr.html
+deploy/wa-akg/qr.txt
+deploy/wa-akg/set-apikey.js
