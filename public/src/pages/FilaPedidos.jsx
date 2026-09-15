@@ -200,7 +200,8 @@ export default function FilaPedidos() {
           let itens = [];
           try {
             const raw = typeof p.itens_json === 'string' ? p.itens_json : JSON.stringify(p.itens_json);
-            itens = JSON.parse(raw);
+            const parsed = JSON.parse(raw);
+            itens = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
           } catch {
             itens = [];
           }

@@ -81,7 +81,8 @@ export default function PedidoRastreio() {
   let itens = [];
   try {
     const raw = typeof pedido.itens_json === 'string' ? pedido.itens_json : JSON.stringify(pedido.itens_json);
-    itens = JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    itens = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
   } catch {
     itens = [];
   }
