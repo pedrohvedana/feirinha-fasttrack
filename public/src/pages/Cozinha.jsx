@@ -149,11 +149,11 @@ export default function Cozinha() {
           const tempoClasse = getTempoClasse(tempo.totalSegundos);
 
           return (
-            <div
+          <div
               key={p.id}
               className={`bg-gray-900 rounded-2xl border p-6 shadow-lg hover:border-gray-600 transition ${
                 p.status === 'aguardando_retirada'
-                  ? 'border-violet-500 ring-2 ring-violet-500/40 animate-pulse'
+                  ? 'border-violet-500 ring-2 ring-violet-500/40 shadow-violet-500/20'
                   : 'border-gray-700'
               }`}
             >

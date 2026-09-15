@@ -9,6 +9,7 @@ function makeEnv(overrides: Partial<BotDeps> = {}, initial?: Parameters<typeof c
   const config: AtendimentoConfig = { atendente_numero: '5515997646555', atendente_nome: 'João', bem_vindo: 'Olá! Bem-vindo!' };
   const deps: BotDeps = {
     db: f.db,
+    env: { PIX_ACCESS_TOKEN: 'pix-tok' },
     config,
     cardapio,
     enviar: async (numero: string, msg: string) => {

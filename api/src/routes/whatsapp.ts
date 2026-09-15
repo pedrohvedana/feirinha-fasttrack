@@ -89,6 +89,7 @@ const spam = await registrarContagemSpam(c.env.DB, numero);
 
     const bot = criarBot({
       db: c.env.DB,
+      env: c.env,
       config,
       cardapio: cardapio.results ?? [],
       enviar: async (destino: string, msg: string) => {

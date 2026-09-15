@@ -14,6 +14,8 @@ const STATUS_CONFIG = {
 
 export default function PedidoRastreio() {
   const [pedido, setPedido] = useState(null);
+  const [posicao, setPosicao] = useState(null);
+  const [tempoEstimado, setTempoEstimado] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
   const [marcando, setMarcando] = useState(false);
@@ -40,6 +42,17 @@ export default function PedidoRastreio() {
       try {
         const data = await api.buscarPedido(id);
         setPedido(data);
+
+        // Buscar posição na fila
+        const filaData = await api.filaAtivas();
+        const fila = filaData.results || [];
+        const idx = fila.findIndex((p) => p.id === id);
+        if (idx >= 0) {
+          setPosicao(idx + 1);
+          setTempoEstimado((idx + 1) * 7); // ~7 min por pedido na cozinha
+        } else {
+          setPosicao(null);
+        }
       } catch {
         setErro('Pedido não encontrado');
       } finally {
@@ -145,14 +158,23 @@ export default function PedidoRastreio() {
               <p className="capitalize font-medium text-gray-900">{pedido.pagamento_tipo}</p>
             </div>
 
-            {pedido.status === 'pago' && (
-              <button
-                onClick={marcarChegada}
-                disabled={marcando}
-                className="w-full py-4 bg-violet-600 text-white rounded-xl font-bold text-lg hover:bg-violet-700 transition disabled:opacity-50"
-              >
-                {marcando ? 'Registrando...' : '📍 Cheguei na feirinha'}
-              </button>
+            {pedido.status === 'pago' && posicao && (
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                <p className="text-sm text-gray-500">Sua posição na fila</p>
+                <p className="text-3xl font-bold text-blue-700">#{posicao}</p>
+                <p className="text-sm text-gray-500 mt-1">⏱️ Estimativa: ~{tempoEstimado} min</p>
+                {chegou ? (
+                  <p className="text-lg text-violet-600 font-bold mt-2">✅ Você já chegou!</p>
+                ) : (
+                  <button
+                    onClick={marcarChegada}
+                    disabled={marcando}
+                    className="w-full py-4 bg-violet-600 text-white rounded-xl font-bold text-lg hover:bg-violet-700 transition disabled:opacity-50 mt-3"
+                  >
+                    {marcando ? 'Registrando...' : '📍 Cheguei na feirinha!'}
+                  </button>
+                )}
+              </div>
             )}
 
             {pedido.status === 'aguardando_retirada' && (

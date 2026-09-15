@@ -1,3 +1,11 @@
+import { criarCobrancaPix } from './pix';
+
+type Env = {
+  PIX_ACCESS_TOKEN?: string;
+  PIX_PAGADOR_EMAIL?: string;
+  PIX_EXPIRACAO_MINUTOS?: string;
+};
+
 export type ItemCardapio = { id: number; nome: string; preco: number };
 
 const URL_RASTREIO_BASE = 'https://feirinha.ciavedana.com.br/rastrear';
@@ -29,6 +37,7 @@ export interface AtendimentoConfig {
 
 export interface BotDeps {
   db: { prepare: (sql: string) => any };
+  env: Env;
   config: AtendimentoConfig;
   cardapio: ItemCardapio[];
   enviar: (numero: string, mensagem: string) => Promise<{ ok: boolean; keyId?: string }>;
@@ -333,9 +342,26 @@ Escolha uma opção:
     await salvarConversa(numero, 'menu', [], nome);
 
     if (pagamentoTipo === 'pix') {
-      await responder(numero, `✅ *Pedido registrado!*\n\nSeu pedido *#${id}* está aguardando o pagamento do *PIX*.\nAcompanhe: ${URL_Rastreio(id)}\n\n*PIX chegando em breve — por ora confirme com o atendente.* 💚`);
+      const cobranca = await criarCobrancaPix(deps.env, { id, valor_total: total, whatsapp: numero });
+      if (cobranca) {
+        await deps.db
+          .prepare(
+            `UPDATE pedidos SET pix_payment_id = ?, pix_qr_code = ?, pix_qr_base64 = ?, pix_expira_em = ? WHERE id = ?`,
+          )
+          .bind(cobranca.payment_id, cobranca.qr_code, cobranca.qr_base64, cobranca.expira_em, id)
+          .run();
+        await responder(
+          numero,
+          `✅ *Pedido #${id} criado!*\n\n*Total: R$ ${total.toFixed(2).replace('.', ',')}*\n\n📱 *PIX Copia e Cola:*\n${cobranca.qr_code}\n\n⏰ Expira em: ${new Date(cobranca.expira_em).toLocaleTimeString('pt-BR')}\n\nAcompanhe: ${URL_Rastreio(id)}\n\n💡 Pague e quando chegar na feirinha, *clique no link acima* e aperte "Cheguei"!`,
+        );
+      } else {
+        await responder(
+          numero,
+          `✅ *Pedido #${id} criado!*\n\n⚠️ Erro ao gerar PIX agora. Tente novamente ou fale com o atendente.\nAcompanhe: ${URL_Rastreio(id)}`,
+        );
+      }
     } else {
-      await responder(numero, `✅ *Pedido registrado!*\n\nSeu pedido *#${id}* será pago em *dinheiro* na entrega/retirada. 💵\nAcompanhe: ${URL_Rastreio(id)}`);
+      await responder(numero, `✅ *Pedido registrado!*\n\nSeu pedido *#${id}* será pago em *dinheiro* na retirada. 💵\nAcompanhe: ${URL_Rastreio(id)}`);
     }
   }
 

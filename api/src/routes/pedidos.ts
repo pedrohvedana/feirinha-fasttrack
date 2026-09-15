@@ -75,7 +75,8 @@ if (cobranca) {
     }
   }
 
-  return c.json({ id, message: 'Pedido criado com sucesso', pix }, 201);
+  const rastreio_url = `https://feirinha.ciavedana.com.br/rastrear/${id}`;
+  return c.json({ id, message: 'Pedido criado com sucesso', pix, rastreio_url }, 201);
 });
 
 pedidosRouter.get('/', async (c) => {
