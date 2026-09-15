@@ -5,6 +5,7 @@ import { api } from '../api';
 const STATUS_CONFIG = {
   aguardando_pagamento: { label: 'Aguardando Pagamento', cor: 'bg-yellow-100 text-yellow-800', icone: '⏳' },
   pago: { label: 'Pago', cor: 'bg-blue-100 text-blue-800', icone: '✅' },
+  aguardando_retirada: { label: 'Você chegou — em breve no preparo', cor: 'bg-violet-100 text-violet-800', icone: '📍' },
   em_preparo: { label: 'Em Preparo', cor: 'bg-orange-100 text-orange-800', icone: '🍳' },
   pronto: { label: 'Pronto para Retirada', cor: 'bg-emerald-100 text-emerald-800', icone: '🎉' },
   cancelado: { label: 'Cancelado', cor: 'bg-red-100 text-red-800', icone: '❌' },
@@ -13,16 +14,45 @@ const STATUS_CONFIG = {
 
 export default function PedidoRastreio() {
   const [pedido, setPedido] = useState(null);
+  const [posicao, setPosicao] = useState(null);
+  const [tempoEstimado, setTempoEstimado] = useState(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
+  const [marcando, setMarcando] = useState(false);
+  const [chegou, setChegou] = useState(false);
 
   const { id } = useParams();
+
+  async function marcarChegada() {
+    setMarcando(true);
+    try {
+      await api.marcarChegada(id);
+      setChegou(true);
+      const data = await api.buscarPedido(id);
+      setPedido(data);
+    } catch {
+      setErro('Não foi possível registrar sua chegada. Tente novamente.');
+    } finally {
+      setMarcando(false);
+    }
+  }
 
   useEffect(() => {
     async function buscar() {
       try {
         const data = await api.buscarPedido(id);
         setPedido(data);
+
+        // Buscar posição na fila
+        const filaData = await api.filaAtivas();
+        const fila = filaData.results || [];
+        const idx = fila.findIndex((p) => p.id === id);
+        if (idx >= 0) {
+          setPosicao(idx + 1);
+          setTempoEstimado((idx + 1) * 7); // ~7 min por pedido na cozinha
+        } else {
+          setPosicao(null);
+        }
       } catch {
         setErro('Pedido não encontrado');
       } finally {
@@ -64,7 +94,8 @@ export default function PedidoRastreio() {
   let itens = [];
   try {
     const raw = typeof pedido.itens_json === 'string' ? pedido.itens_json : JSON.stringify(pedido.itens_json);
-    itens = JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    itens = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
   } catch {
     itens = [];
   }
@@ -126,6 +157,31 @@ export default function PedidoRastreio() {
               <p className="text-sm text-gray-500 mb-1">Pagamento</p>
               <p className="capitalize font-medium text-gray-900">{pedido.pagamento_tipo}</p>
             </div>
+
+            {pedido.status === 'pago' && posicao && (
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                <p className="text-sm text-gray-500">Sua posição na fila</p>
+                <p className="text-3xl font-bold text-blue-700">#{posicao}</p>
+                <p className="text-sm text-gray-500 mt-1">⏱️ Estimativa: ~{tempoEstimado} min</p>
+                {chegou ? (
+                  <p className="text-lg text-violet-600 font-bold mt-2">✅ Você já chegou!</p>
+                ) : (
+                  <button
+                    onClick={marcarChegada}
+                    disabled={marcando}
+                    className="w-full py-4 bg-violet-600 text-white rounded-xl font-bold text-lg hover:bg-violet-700 transition disabled:opacity-50 mt-3"
+                  >
+                    {marcando ? 'Registrando...' : '📍 Cheguei na feirinha!'}
+                  </button>
+                )}
+              </div>
+            )}
+
+            {pedido.status === 'aguardando_retirada' && (
+              <div className="text-center text-sm text-violet-700 bg-violet-50 rounded-xl p-4">
+                Chegada registrada! Avisamos o balcão. Agora é só aguardar ficar pronto.
+              </div>
+            )}
 
             {isFinal && pedido.status !== 'cancelado' && (
               <div className="text-center text-sm text-emerald-700 bg-emerald-50 rounded-xl p-4">

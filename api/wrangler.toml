@@ -11,8 +11,12 @@ database_id = "d68eb712-3202-4276-8a6b-4f7fc8bb3789"
 EVOLUTION_API_URL = "https://api.ciavedana.com.br"
 EVOLUTION_API_KEY = "FAA447A6E3D1-4145-88E2-15841962235D"
 EVOLUTION_INSTANCE = "ciavedana"
+WHATSAPP_PROVIDER = "evolution"
+WA_AKG_BASE_URL = "https://wa-akg.ciavedana.com.br"
+WA_AKG_SESSION = "feirinha"
 PIX_EXPIRACAO_MINUTOS = "30"
 PEDIDO_EXPIRA_MINUTOS = "15"
+PIX_LEMBRETE_MINUTOS = "8"
 
 [triggers]
 crons = ["*/5 * * * *"]

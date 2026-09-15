@@ -6,6 +6,7 @@ import { useAuth } from '../auth';
 const STATUS_COLORS = {
   aguardando_pagamento: 'bg-yellow-100 text-yellow-800',
   pago: 'bg-blue-100 text-blue-800',
+  aguardando_retirada: 'bg-violet-100 text-violet-800',
   em_preparo: 'bg-orange-100 text-orange-800',
   pronto: 'bg-emerald-100 text-emerald-800',
   cancelado: 'bg-red-100 text-red-800',
@@ -14,6 +15,7 @@ const STATUS_COLORS = {
 const STATUS_LABELS = {
   aguardando_pagamento: 'Aguardando Pagamento',
   pago: 'Pago',
+  aguardando_retirada: 'Cliente Chegou',
   em_preparo: 'Em Preparo',
   pronto: 'Pronto!',
   cancelado: 'Cancelado',
@@ -23,6 +25,10 @@ export default function FilaPedidos() {
   const [pedidos, setPedidos] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [somAtivado, setSomAtivado] = useState(false);
+  const [modalBalcao, setModalBalcao] = useState(false);
+  const [balcaoNome, setBalcaoNome] = useState('');
+  const [balcaoItens, setBalcaoItens] = useState({});
+  const [cardapio, setCardapio] = useState([]);
   const audioContextRef = useRef(null);
   const idsVistosRef = useRef(new Set());
   const logout = useAuth();
@@ -98,15 +104,40 @@ export default function FilaPedidos() {
 
   useEffect(() => {
     carregar();
+    api.cardapio().then((d) => setCardapio(d.results || [])).catch(() => {});
     const t = setInterval(carregar, 5000);
     return () => clearInterval(t);
   }, []);
 
   async function avancarStatus(id, statusAtual) {
-    const proximo = { pago: 'em_preparo', em_preparo: 'pronto' }[statusAtual];
+    const proximo = { pago: 'em_preparo', aguardando_retirada: 'em_preparo', em_preparo: 'pronto' }[statusAtual];
     if (!proximo) return;
     try {
       await api.atualizarStatus(id, proximo);
+      carregar();
+    } catch {
+      /* silenciar */
+    }
+  }
+
+  async function criarPedidoBalcao() {
+    const nome = balcaoNome.trim();
+    if (!nome) return;
+    const itensSelecionados = cardapio.filter((i) => (balcaoItens[i.id] || 0) > 0);
+    const itens = itensSelecionados.map((i) => ({ id: i.id, nome: i.nome, preco: i.preco, quantidade: balcaoItens[i.id] }));
+    if (itens.length === 0) return;
+    const valor = itens.reduce((s, i) => s + i.preco * i.quantidade, 0);
+    try {
+      await api.criarPedido({
+        cliente_nome: nome,
+        itens_json: itens,
+        valor_total: valor,
+        pagamento_tipo: 'dinheiro',
+        origem: 'balcao',
+      });
+      setModalBalcao(false);
+      setBalcaoNome('');
+      setBalcaoItens({});
       carregar();
     } catch {
       /* silenciar */
@@ -134,6 +165,7 @@ export default function FilaPedidos() {
       <header className="max-w-2xl mx-auto mb-6">
         <div className="flex items-center gap-4 mb-2">
           <Link to="/" className="text-sm text-emerald-600 hover:underline">← Novo Pedido</Link>
+          <button onClick={() => setModalBalcao(true)} className="text-sm text-emerald-600 hover:underline">+ Pedido Balcão</button>
           <Link to="/dashboard" className="text-sm text-gray-400 hover:underline">Dashboard</Link>
           <Link to="/cozinha" className="text-sm text-gray-400 hover:underline">Cozinha</Link>
           <button
@@ -168,7 +200,8 @@ export default function FilaPedidos() {
           let itens = [];
           try {
             const raw = typeof p.itens_json === 'string' ? p.itens_json : JSON.stringify(p.itens_json);
-            itens = JSON.parse(raw);
+            const parsed = JSON.parse(raw);
+            itens = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
           } catch {
             itens = [];
           }
@@ -183,6 +216,7 @@ export default function FilaPedidos() {
                     </span>
                     <span className="text-sm text-gray-500 font-mono">#{p.id}</span>
                     {p.cliente_nome && <span className="text-sm text-gray-600">{p.cliente_nome}</span>}
+                    {p.origem === 'balcao' && <span className="text-xs px-2 py-0.5 rounded-full bg-gray-200 text-gray-600">Balcão</span>}
                   </div>
 
                   <div className="text-sm text-gray-700 space-y-1 mb-2">
@@ -203,14 +237,15 @@ export default function FilaPedidos() {
 
                 <button
                   onClick={() => avancarStatus(p.id, p.status)}
-                  disabled={!['pago', 'em_preparo'].includes(p.status)}
+                  disabled={!['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)}
                   className={`px-4 py-2 rounded-xl font-medium text-sm transition whitespace-nowrap ${
-                    ['pago', 'em_preparo'].includes(p.status)
+                    ['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)
                       ? 'bg-emerald-600 text-white hover:bg-emerald-700'
                       : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                   }`}
                 >
                   {p.status === 'pago' && 'Iniciar Preparo'}
+                  {p.status === 'aguardando_retirada' && 'Iniciar Preparo'}
                   {p.status === 'em_preparo' && 'Marcar Pronto'}
                   {p.status === 'pronto' && 'Entregue ✓'}
                   {p.status === 'aguardando_pagamento' && 'Aguardando Pagamento'}
@@ -220,6 +255,55 @@ export default function FilaPedidos() {
           );
         })}
       </div>
+
+      {modalBalcao && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50" onClick={() => setModalBalcao(false)}>
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Novo Pedido Balcão</h2>
+
+            <label className="block text-sm font-medium text-gray-700 mb-1">Nome do cliente</label>
+            <input
+              value={balcaoNome}
+              onChange={(e) => setBalcaoNome(e.target.value)}
+              placeholder="Ex: Maria"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+
+            <p className="text-sm font-medium text-gray-700 mb-2">Itens</p>
+            <div className="space-y-2 max-h-60 overflow-y-auto mb-4">
+              {cardapio.map((item) => (
+                <div key={item.id} className="flex items-center justify-between text-sm">
+                  <span className="text-gray-700">{item.nome} — R$ {Number(item.preco).toFixed(2)}</span>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => setBalcaoItens((prev) => ({ ...prev, [item.id]: Math.max(0, (prev[item.id] || 0) - 1) }))}
+                      className="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 font-bold"
+                    >−</button>
+                    <span className="w-6 text-center font-medium">{balcaoItens[item.id] || 0}</span>
+                    <button
+                      onClick={() => setBalcaoItens((prev) => ({ ...prev, [item.id]: (prev[item.id] || 0) + 1 }))}
+                      className="w-7 h-7 rounded-full bg-emerald-100 hover:bg-emerald-200 text-emerald-700 font-bold"
+                    >+</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-3">
+              <button onClick={() => setModalBalcao(false)} className="flex-1 py-2 rounded-xl bg-gray-100 text-gray-700 font-medium hover:bg-gray-200">
+                Cancelar
+              </button>
+              <button
+                onClick={criarPedidoBalcao}
+                disabled={!balcaoNome.trim()}
+                className="flex-1 py-2 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 disabled:opacity-50"
+              >
+                Criar Pedido
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

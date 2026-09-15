@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  wa-akg-db:
+    image: mysql:8.0
+    container_name: wa-akg-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-wa_akg}
+    volumes:
+      - wa_akg_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - portainer_default
+
+  wa-akg-app:
+    build:
+      context: ./repo
+      dockerfile: Dockerfile
+    container_name: wa-akg-app
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: mysql://root:${MYSQL_ROOT_PASSWORD}@wa-akg-db:3306/${MYSQL_DATABASE:-wa_akg}
+      AUTH_SECRET: ${AUTH_SECRET}
+      BASE_URL: ${BASE_URL}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      NODE_ENV: production
+      PORT: ${PORT:-3000}
+      HOSTNAME: 0.0.0.0
+      NEXT_PUBLIC_APP_URL: ${BASE_URL}
+      NEXT_PUBLIC_API_URL: ${BASE_URL}/api
+      BAILEYS_LOG_LEVEL: ${BAILEYS_LOG_LEVEL:-error}
+      NEXT_PUBLIC_SWAGGER_USERNAME: ${NEXT_PUBLIC_SWAGGER_USERNAME:-admin}
+      NEXT_PUBLIC_SWAGGER_PASSWORD: ${NEXT_PUBLIC_SWAGGER_PASSWORD}
+      NEXT_PUBLIC_SWAGGER_ENABLED: ${NEXT_PUBLIC_SWAGGER_ENABLED:-true}
+      TZ: ${TZ:-America/Sao_Paulo}
+      LOCALE: ${LOCALE:-pt-BR}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wa-akg.rule=Host(`wa-akg.ciavedana.com.br`)"
+      - "traefik.http.routers.wa-akg.entrypoints=websecure"
+      - "traefik.http.routers.wa-akg.tls.certresolver=letsencrypt"
+      - "traefik.http.services.wa-akg.loadbalancer.server.port=3000"
+    depends_on:
+      wa-akg-db:
+        condition: service_healthy
+    volumes:
+      - wa_akg_app:/app/data
+      - wa_akg_uploads:/app/uploads
+    networks:
+      - portainer_default
+
+networks:
+  portainer_default:
+    external: true
+
+volumes:
+  wa_akg_mysql:
+  wa_akg_app:
+  wa_akg_uploads:
