@@ -18,6 +18,7 @@ export const api = {
   buscarPedido: (id) => request(`/pedidos/${id}`),
   atualizarStatus: (id, status) => request(`/pedidos/${id}/status`, { method: 'PATCH', body: JSON.stringify({ status }) }),
   confirmarPagamento: (id) => request(`/pedidos/${id}/confirmar-pagamento`, { method: 'POST' }),
+  marcarChegada: (id) => request(`/pedidos/${id}/cheguei`, { method: 'PATCH' }),
   filaAtivas: () => request('/pedidos/fila/ativas'),
   statsHoje: () => request('/pedidos/stats/hoje'),
   cardapio: () => request('/cardapio'),

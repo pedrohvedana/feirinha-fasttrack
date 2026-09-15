@@ -325,10 +325,10 @@ Escolha uma opção:
     const itens = carrinho.map((i) => ({ id: i.id, nome: i.nome, preco: i.preco, qtd: i.qtd }));
     await deps.db
       .prepare(
-        `INSERT INTO pedidos (id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, atualizado_em)
-         VALUES (?, ?, ?, ?, ?, ?, 'aguardando_pagamento', CURRENT_TIMESTAMP)`,
+        `INSERT INTO pedidos (id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, origem, status, atualizado_em)
+         VALUES (?, ?, ?, ?, ?, ?, ?, 'aguardando_pagamento', CURRENT_TIMESTAMP)`,
       )
-      .bind(id, nome ?? null, numero, JSON.stringify(itens), total, pagamentoTipo)
+      .bind(id, nome ?? null, numero, JSON.stringify(itens), total, pagamentoTipo, 'prepedido')
       .run();
     await salvarConversa(numero, 'menu', [], nome);
 

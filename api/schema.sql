@@ -1,12 +1,13 @@
 CREATE TABLE IF NOT EXISTS pedidos (
   id TEXT PRIMARY KEY DEFAULT (hex(randomblob(8))),
   cliente_nome TEXT,
-  whatsapp TEXT NOT NULL,
+  whatsapp TEXT,
   itens_json TEXT NOT NULL,
   valor_total REAL NOT NULL,
   pagamento_tipo TEXT CHECK(pagamento_tipo IN ('pix', 'cartao', 'dinheiro')),
   pagamento_confirmado INTEGER DEFAULT 0,
   status TEXT DEFAULT 'aguardando_pagamento',
+  origem TEXT DEFAULT 'whatsapp',
   lembrete_enviado INTEGER DEFAULT 0,
   criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
   atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP

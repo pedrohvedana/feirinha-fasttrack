@@ -53,14 +53,15 @@ export function criarlaFakeD1(initial?: Partial<FakeD1State>) {
         return { meta: { changes: antes - tables.bot_msg_ids.length } };
       }
       if (lower.includes('insert into pedidos')) {
-        const [id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo] = args;
+        const [id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, origem] = args;
         const row: FakeRow = {
           id: id || 'pedido-fake',
           cliente_nome: cliente_nome ?? null,
-          whatsapp,
+          whatsapp: whatsapp ?? null,
           itens_json,
           valor_total,
           pagamento_tipo,
+          origem: origem ?? 'whatsapp',
           pagamento_confirmado: 0,
           status: 'aguardando_pagamento',
           criado_em: new Date().toISOString(),
@@ -83,6 +84,19 @@ export function criarlaFakeD1(initial?: Partial<FakeD1State>) {
         const i = tables.conversas.findIndex((r) => r.numero === numero);
         if (i >= 0) {
           if (lower.includes('paused_until')) tables.conversas[i] = { ...tables.conversas[i], paused_until: new Date(Date.now() + 10 * 60000).toISOString() };
+          return { meta: { changes: 1 } };
+        }
+        return { meta: { changes: 0 } };
+      }
+      if (lower.includes('update pedidos')) {
+        const id = args[args.length - 1] as string;
+        const i = tables.pedidos.findIndex((r) => r.id === id);
+        if (i >= 0) {
+          const m = lower.match(/set ([a-z_]+) = '?([^',]+)'?/);
+          if (m) {
+            tables.pedidos[i] = { ...tables.pedidos[i], [m[1]]: m[2] };
+          }
+          tables.pedidos[i] = { ...tables.pedidos[i], atualizado_em: new Date().toISOString() };
           return { meta: { changes: 1 } };
         }
         return { meta: { changes: 0 } };
@@ -113,6 +127,15 @@ export function criarlaFakeD1(initial?: Partial<FakeD1State>) {
         if (lower.includes('where id =')) {
           const p = tables.pedidos.find((r) => r.id === args[0]);
           return { results: p ? [p] : [] };
+        }
+        const m = lower.match(/status in \(([^)]+)\)/);
+        if (m) {
+          const statuses = m[1]
+            .split(',')
+            .map((s) => s.trim().replace(/'/g, '').replace(/"/g, ''))
+            .filter(Boolean);
+          const filtrados = tables.pedidos.filter((r) => statuses.includes(String(r.status)));
+          return { results: filtrados };
         }
         return { results: tables.pedidos };
       }

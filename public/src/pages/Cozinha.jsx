@@ -6,6 +6,7 @@ import { useAuth } from '../auth';
 const STATUS_COLORS = {
   aguardando_pagamento: 'bg-yellow-100 text-yellow-800',
   pago: 'bg-blue-100 text-blue-800',
+  aguardando_retirada: 'bg-violet-100 text-violet-800',
   em_preparo: 'bg-orange-100 text-orange-800',
   pronto: 'bg-emerald-100 text-emerald-800',
   cancelado: 'bg-red-100 text-red-800',
@@ -14,6 +15,7 @@ const STATUS_COLORS = {
 const STATUS_LABELS = {
   aguardando_pagamento: 'Aguardando',
   pago: 'Pago',
+  aguardando_retirada: 'Chegou',
   em_preparo: 'Preparando',
   pronto: 'Pronto!',
   cancelado: 'Cancelado',
@@ -55,7 +57,7 @@ export default function Cozinha() {
     try {
       const data = await api.filaAtivas();
       const ativos = (data.results || []).filter((p) =>
-        ['pago', 'em_preparo', 'pronto'].includes(p.status)
+        ['pago', 'aguardando_retirada', 'em_preparo', 'pronto'].includes(p.status)
       );
       setPedidos(ativos);
     } catch {
@@ -78,7 +80,7 @@ export default function Cozinha() {
   }, []);
 
   async function avancarStatus(id, statusAtual) {
-    const proximo = { pago: 'em_preparo', em_preparo: 'pronto' }[statusAtual];
+    const proximo = { pago: 'em_preparo', aguardando_retirada: 'em_preparo', em_preparo: 'pronto' }[statusAtual];
     if (!proximo) return;
     try {
       await api.atualizarStatus(id, proximo);
@@ -105,7 +107,7 @@ export default function Cozinha() {
         <p className="text-gray-400">Pedidos ativos — atualiza a cada 5s</p>
 
         <div className="flex gap-2 mt-4 flex-wrap">
-          {['todos', 'pago', 'em_preparo', 'pronto'].map((f) => (
+          {['todos', 'aguardando_retirada', 'pago', 'em_preparo', 'pronto'].map((f) => (
             <button
               key={f}
               onClick={() => setFiltro(f)}
@@ -148,7 +150,11 @@ export default function Cozinha() {
           return (
             <div
               key={p.id}
-              className="bg-gray-900 rounded-2xl border border-gray-700 p-6 shadow-lg hover:border-gray-600 transition"
+              className={`bg-gray-900 rounded-2xl border p-6 shadow-lg hover:border-gray-600 transition ${
+                p.status === 'aguardando_retirada'
+                  ? 'border-violet-500 ring-2 ring-violet-500/40 animate-pulse'
+                  : 'border-gray-700'
+              }`}
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex-1 min-w-0">
@@ -182,14 +188,15 @@ export default function Cozinha() {
 
               <button
                 onClick={() => avancarStatus(p.id, p.status)}
-                disabled={!['pago', 'em_preparo'].includes(p.status)}
+                disabled={!['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)}
                 className={`w-full py-3 rounded-xl font-bold text-lg transition ${
-                  ['pago', 'em_preparo'].includes(p.status)
+                  ['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)
                     ? 'bg-emerald-600 text-white hover:bg-emerald-700'
                     : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                 }`}
               >
                 {p.status === 'pago' && 'Iniciar Preparo'}
+                {p.status === 'aguardando_retirada' && 'Iniciar Preparo'}
                 {p.status === 'em_preparo' && 'Marcar Pronto'}
                 {p.status === 'pronto' && 'Entregue ✓'}
               </button>
