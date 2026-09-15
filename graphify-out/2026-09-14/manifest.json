@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "api/schema.sql": {
-    "mtime": 1789427150.00518,
-    "ast_hash": "b85cf90d280ff9798a314b93d0cc8bda",
+    "mtime": 1789418616.336533,
+    "ast_hash": "96e7a6ea9e79732748ed413be2ad1b0b",
     "semantic_hash": ""
   },
   "api/src/index.ts": {
@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
-    "mtime": 1789509125.5324159,
-    "ast_hash": "3d326c87c30193231f8fce4511743be0",
+    "mtime": 1789383897.631197,
+    "ast_hash": "bdbd9fc77593665aa5a81b772a113ca7",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.ts": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "public/src/api.js": {
-    "mtime": 1789427400.7766356,
-    "ast_hash": "056a48fd00efc47ea140333f68783770",
+    "mtime": 1787777193.9163802,
+    "ast_hash": "80f9caabc2408955426a4c526094b23c",
     "semantic_hash": ""
   },
   "public/src/main.jsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1789436062.4681783,
-    "ast_hash": "657884f090407746d6517fff2e13f331",
+    "mtime": 1787832368.815523,
+    "ast_hash": "79f3cf7c532b6b64b756e47a1dcd68da",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Cozinha.jsx": {
-    "mtime": 1789511794.932929,
-    "ast_hash": "88775717c007b20e33cde2620045f1f7",
+    "mtime": 1787834181.9578245,
+    "ast_hash": "b8fa1a13acd7c36ab6e76ecf9bd35547",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm2.jsx": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/PedidoRastreio.jsx": {
-    "mtime": 1789511507.0432193,
-    "ast_hash": "3ec9203efa1d78ca1d3076581b1d1e7e",
+    "mtime": 1787844901.7436595,
+    "ast_hash": "6f5595ea48ecc398d45b3c090db32951",
     "semantic_hash": ""
   },
   ".claude/PRPs/plans/fluidez-operador-solo.plan.md": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/whatsapp.ts": {
-    "mtime": 1789510210.355066,
-    "ast_hash": "64a711f9c6f9ef651e3d04244a8aede5",
+    "mtime": 1789408858.556875,
+    "ast_hash": "3deb3db551b491a24e669363a17d0398",
     "semantic_hash": ""
   },
   "api/src/services/antispam.test.ts": {
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "api/src/services/bot-flow.test.ts": {
-    "mtime": 1789510967.204963,
-    "ast_hash": "fab5218ee1e3f79a77a00173bb923eee",
+    "mtime": 1789419084.7486956,
+    "ast_hash": "b6ddd011fdf5e3a9f3e3155daba799d9",
     "semantic_hash": ""
   },
   "api/src/services/bot.test.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "api/src/services/bot.ts": {
-    "mtime": 1789510422.5848918,
-    "ast_hash": "e7580c138c2d9f4f1f4b327f94fe5f16",
+    "mtime": 1789420364.5428934,
+    "ast_hash": "25bd820023dc5d807a35ff6034fb753c",
     "semantic_hash": ""
   },
   "api/src/services/pix.test.ts": {
@@ -265,8 +265,8 @@
     "semantic_hash": ""
   },
   "api/src/test/fake-d1.ts": {
-    "mtime": 1789426339.427148,
-    "ast_hash": "d1de37fb1c14ad7ee9030cc5b52061ac",
+    "mtime": 1789419025.915342,
+    "ast_hash": "7e007cfb8fcbe898cff4f435f03beb4a",
     "semantic_hash": ""
   },
   "api/vitest.config.ts": {
@@ -307,26 +307,6 @@
   ".github/workflows/deploy.yml": {
     "mtime": 1789420148.2041795,
     "ast_hash": "3de5820bef8fc443440c3e75b2a3a2c8",
-    "semantic_hash": ""
-  },
-  "api/migrations_chatbot_origem.sql": {
-    "mtime": 1789429183.772184,
-    "ast_hash": "4b406e1e1f4c68a5fa50da1747557a2b",
-    "semantic_hash": ""
-  },
-  "api/src/routes/pedidos.test.ts": {
-    "mtime": 1789426773.1853118,
-    "ast_hash": "5eb46f913f0688660ef512533d949ae3",
-    "semantic_hash": ""
-  },
-  ".planning/PLAN-fluxo-compra-remota.md": {
-    "mtime": 1789508717.5628445,
-    "ast_hash": "11af7f8e7636b2d6e6af668b4a26b123",
-    "semantic_hash": ""
-  },
-  ".planning/PLAN-pagamento-operacao.md": {
-    "mtime": 1789508119.04644,
-    "ast_hash": "819a5e7b0f7463454aa0c9aeb8606578",
     "semantic_hash": ""
   }
 }

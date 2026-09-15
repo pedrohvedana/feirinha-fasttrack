@@ -21,6 +21,7 @@ export const api = {
   marcarChegada: (id) => request(`/pedidos/${id}/cheguei`, { method: 'PATCH' }),
   filaAtivas: () => request('/pedidos/fila/ativas'),
   statsHoje: () => request('/pedidos/stats/hoje'),
+  statsDashboard: () => request('/pedidos/stats/dashboard'),
   cardapio: () => request('/cardapio'),
   cardapioTodos: () => request('/cardapio/todos'),
   cardapioCriar: (dados) => request('/cardapio', { method: 'POST', body: JSON.stringify(dados) }),

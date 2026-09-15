@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
-    "mtime": 1789509125.5324159,
-    "ast_hash": "3d326c87c30193231f8fce4511743be0",
+    "mtime": 1789426513.1287234,
+    "ast_hash": "58020fbca8b9e859dc175ea6d5f7a43a",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.ts": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Cozinha.jsx": {
-    "mtime": 1789511794.932929,
-    "ast_hash": "88775717c007b20e33cde2620045f1f7",
+    "mtime": 1789436123.8660767,
+    "ast_hash": "640a1069aacb628c8d2e8e7bbfa12203",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm2.jsx": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/PedidoRastreio.jsx": {
-    "mtime": 1789511507.0432193,
-    "ast_hash": "3ec9203efa1d78ca1d3076581b1d1e7e",
+    "mtime": 1789436142.7833557,
+    "ast_hash": "f54ca61d97c1d2d4eda6cc892020108a",
     "semantic_hash": ""
   },
   ".claude/PRPs/plans/fluidez-operador-solo.plan.md": {
@@ -225,8 +225,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/whatsapp.ts": {
-    "mtime": 1789510210.355066,
-    "ast_hash": "64a711f9c6f9ef651e3d04244a8aede5",
+    "mtime": 1789408858.556875,
+    "ast_hash": "3deb3db551b491a24e669363a17d0398",
     "semantic_hash": ""
   },
   "api/src/services/antispam.test.ts": {
@@ -240,8 +240,8 @@
     "semantic_hash": ""
   },
   "api/src/services/bot-flow.test.ts": {
-    "mtime": 1789510967.204963,
-    "ast_hash": "fab5218ee1e3f79a77a00173bb923eee",
+    "mtime": 1789419084.7486956,
+    "ast_hash": "b6ddd011fdf5e3a9f3e3155daba799d9",
     "semantic_hash": ""
   },
   "api/src/services/bot.test.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "api/src/services/bot.ts": {
-    "mtime": 1789510422.5848918,
-    "ast_hash": "e7580c138c2d9f4f1f4b327f94fe5f16",
+    "mtime": 1789427269.424441,
+    "ast_hash": "0c55483567de82f245c8f8c881e36ac8",
     "semantic_hash": ""
   },
   "api/src/services/pix.test.ts": {
@@ -317,16 +317,6 @@
   "api/src/routes/pedidos.test.ts": {
     "mtime": 1789426773.1853118,
     "ast_hash": "5eb46f913f0688660ef512533d949ae3",
-    "semantic_hash": ""
-  },
-  ".planning/PLAN-fluxo-compra-remota.md": {
-    "mtime": 1789508717.5628445,
-    "ast_hash": "11af7f8e7636b2d6e6af668b4a26b123",
-    "semantic_hash": ""
-  },
-  ".planning/PLAN-pagamento-operacao.md": {
-    "mtime": 1789508119.04644,
-    "ast_hash": "819a5e7b0f7463454aa0c9aeb8606578",
     "semantic_hash": ""
   }
 }

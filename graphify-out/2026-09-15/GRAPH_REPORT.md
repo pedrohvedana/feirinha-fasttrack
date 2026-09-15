@@ -1,23 +1,23 @@
-# Graph Report - feirinha-fasttrack  (2026-09-15)
+# Graph Report - feirinha-fasttrack  (2026-09-14)
 
 ## Corpus Check
-- 63 files · ~25,587 words
+- 61 files · ~22,953 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 391 nodes · 483 edges · 34 communities (27 shown, 7 thin omitted)
+- 367 nodes · 459 edges · 33 communities (26 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d4ac6c38`
+- Built from commit: `29eca143`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - services/whatsapp.ts
 - App.jsx
-- routes/whatsapp.test.ts
+- app.ts
 - public/package.json
 - Fases
 - Plan: Fluidez para Operador Solo
@@ -43,7 +43,6 @@
 - migrations_chatbot_lembrete.sql
 - expiracao-pix.ts
 - migrations_chatbot_origem.sql
-- PLAN - Fluxo Compra Remota + Chegada no Local
 
 ## God Nodes (most connected - your core abstractions)
 1. `Plan: Fluidez para Operador Solo` - 12 edges
@@ -51,11 +50,11 @@
 3. `processarExpiracaoPix()` - 11 edges
 4. `useAuth()` - 11 edges
 5. `compilerOptions` - 10 edges
-6. `PLAN - Fluxo Compra Remota + Chegada no Local` - 9 edges
+6. `criarlaFakeD1()` - 9 edges
 7. `enviarMensagem()` - 9 edges
 8. `Project - Feirinha Fast Track` - 9 edges
-9. `criarlaFakeD1()` - 8 edges
-10. `api` - 8 edges
+9. `api` - 8 edges
+10. `Etapas` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `makeEnv()` --calls--> `criarlaFakeD1()`  [EXTRACTED]
@@ -64,27 +63,27 @@
   api/src/routes/webhook.test.ts → api/src/test/fake-d1.ts
 - `makeEnv()` --calls--> `criarlaFakeD1()`  [EXTRACTED]
   api/src/routes/whatsapp.test.ts → api/src/test/fake-d1.ts
+- `makeEnv()` --calls--> `criarlaFakeD1()`  [EXTRACTED]
+  api/src/services/bot-flow.test.ts → api/src/test/fake-d1.ts
 - `postRoute()` --calls--> `criarApp()`  [EXTRACTED]
   api/src/routes/webhook.test.ts → api/src/app.ts
-- `scheduled()` --calls--> `enviarMensagem()`  [EXTRACTED]
-  api/src/index.ts → api/src/services/whatsapp.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 7 thin omitted)
+## Communities (33 total, 7 thin omitted)
 
 ### Community 0 - "services/whatsapp.ts"
 Cohesion: 0.11
-Nodes (21): Bindings, Pedido, pedidosRouter, Bindings, MENSAGENS, webhookRouter, consultarPagamento(), criarCobrancaPix() (+13 more)
+Nodes (20): Bindings, Pedido, pedidosRouter, Bindings, MENSAGENS, webhookRouter, consultarPagamento(), criarCobrancaPix() (+12 more)
 
 ### Community 1 - "App.jsx"
 Cohesion: 0.12
 Nodes (21): api, App(), RotaProtegida(), AuthContext, AuthProvider(), useAuth(), CardapioAdmin(), Cozinha() (+13 more)
 
-### Community 2 - "routes/whatsapp.test.ts"
-Cohesion: 0.18
-Nodes (11): criarApp(), makeEnv(), makeEnv(), postRoute(), assinar(), makeCtx(), makeEnv(), post() (+3 more)
+### Community 2 - "app.ts"
+Cohesion: 0.10
+Nodes (20): Bindings, criarApp(), app, scheduled(), Bindings, cardapioRouter, makeEnv(), Bindings (+12 more)
 
 ### Community 3 - "public/package.json"
 Cohesion: 0.07
@@ -139,8 +138,8 @@ Cohesion: 0.50
 Nodes (3): http, options, req
 
 ### Community 20 - "bot.ts"
-Cohesion: 0.13
-Nodes (16): AtendimentoConfig, BotDeps, calcularTotal(), CarrinhoItem, Conversa, criarBot(), Env, ItemCardapio (+8 more)
+Cohesion: 0.15
+Nodes (15): AtendimentoConfig, BotDeps, calcularTotal(), CarrinhoItem, Conversa, criarBot(), ItemCardapio, montarCardapioTexto() (+7 more)
 
 ### Community 21 - "Etapas"
 Cohesion: 0.13
@@ -155,32 +154,28 @@ Cohesion: 0.50
 Nodes (3): atendimento_config, bot_msg_ids, conversas
 
 ### Community 31 - "expiracao-pix.ts"
-Cohesion: 0.12
-Nodes (17): Bindings, app, scheduled(), Bindings, cardapioRouter, Bindings, Pedido, rastrearRouter (+9 more)
-
-### Community 33 - "PLAN - Fluxo Compra Remota + Chegada no Local"
-Cohesion: 0.09
-Nodes (22): 1. TRÊS CANAIS DE COMPRA, 2. FLUXO DE CHEGADA NO LOCAL, 3.1 Backend — API (api/src/routes/pedidos.ts), 3.2 Backend — Bot WhatsApp (api/src/services/bot.ts), 3.3 Frontend — Página Rastreio (public/src/pages/PedidoRastreio.jsx), 3.4 Frontend — FilaPedidos / Cozinha, 3. CÓDIGO — O QUE PRECISA MUDAR, 4. COMUNICAÇÃO (WhatsApp) (+14 more)
+Cohesion: 0.27
+Nodes (10): buscarCancelar(), buscarLembrar(), ExpiraPixConfig, ExpiraPixDeps, marcarCancelados(), marcarLembreteEnviado(), PedidoPix, processarExpiracaoPix() (+2 more)
 
 ## Knowledge Gaps
-- **207 isolated node(s):** `Objetivo Simplificado`, `Canal A: Site/Página (PedidoForm.jsx)`, `Canal B: WhatsApp Bot (WA-AKG)`, `Canal C: Pedido Físico no Local (Balcão)`, `O que acontece quando cliente chega:` (+202 more)
+- **189 isolated node(s):** `pedidos`, `pedidos`, `cardapio`, `conversas`, `atendimento_config` (+184 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `criarCobrancaPix()` connect `services/whatsapp.ts` to `bot.ts`?**
+- **Why does `criarlaFakeD1()` connect `app.ts` to `bot.ts`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `Bindings` connect `app.ts` to `routes/whatsapp.ts`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **Why does `criarlaFakeD1()` connect `routes/whatsapp.test.ts` to `bot.ts`?**
+- **Why does `processarExpiracaoPix()` connect `expiracao-pix.ts` to `app.ts`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
-- **What connects `Objetivo Simplificado`, `Canal A: Site/Página (PedidoForm.jsx)`, `Canal B: WhatsApp Bot (WA-AKG)` to the rest of the system?**
-  _207 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `pedidos`, `pedidos`, `cardapio` to the rest of the system?**
+  _189 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `services/whatsapp.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.11290322580645161 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11397849462365592 - nodes in this community are weakly interconnected._
 - **Should `App.jsx` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
-- **Should `public/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
-- **Should `Plan: Fluidez para Operador Solo` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+- **Should `app.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.0967741935483871 - nodes in this community are weakly interconnected._

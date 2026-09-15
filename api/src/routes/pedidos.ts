@@ -99,6 +99,104 @@ pedidosRouter.get('/stats/hoje', async (c) => {
   return c.json(result);
 });
 
+pedidosRouter.get('/stats/dashboard', async (c) => {
+  // Stats principais de hoje
+  const hoje = await c.env.DB.prepare(
+    `SELECT
+       COUNT(*) as total,
+       SUM(CASE WHEN status = 'entregue' THEN 1 ELSE 0 END) as entregues,
+       SUM(CASE WHEN status IN ('pago', 'aguardando_retirada', 'em_preparo') THEN 1 ELSE 0 END) as em_andamento,
+       SUM(CASE WHEN status = 'cancelado' THEN 1 ELSE 0 END) as cancelados,
+       SUM(CASE WHEN status = 'pronto' THEN 1 ELSE 0 END) as prontos,
+       COALESCE(SUM(CASE WHEN status = 'entregue' THEN valor_total ELSE 0 END), 0) as receita_total,
+       COALESCE(SUM(CASE WHEN status IN ('pago', 'aguardando_retirada', 'em_preparo', 'pronto', 'entregue') THEN valor_total ELSE 0 END), 0) as receita_em_aberto,
+       COALESCE(AVG(CASE WHEN status = 'entregue' THEN valor_total END), 0) as ticket_medio,
+       SUM(CASE WHEN pagamento_tipo = 'pix' AND status IN ('pago', 'aguardando_retirada', 'em_preparo', 'pronto', 'entregue') THEN 1 ELSE 0 END) as qtd_pix,
+       SUM(CASE WHEN pagamento_tipo = 'dinheiro' AND status IN ('pago', 'aguardando_retirada', 'em_preparo', 'pronto', 'entregue') THEN 1 ELSE 0 END) as qtd_dinheiro,
+       SUM(CASE WHEN pagamento_tipo = 'cartao' AND status IN ('pago', 'aguardando_retirada', 'em_preparo', 'pronto', 'entregue') THEN 1 ELSE 0 END) as qtd_cartao
+     FROM pedidos
+     WHERE DATE(criado_em) = DATE('now')`
+  ).first<any>();
+
+  // Stats da semana
+  const semana = await c.env.DB.prepare(
+    `SELECT
+       COUNT(*) as total,
+       COALESCE(SUM(CASE WHEN status = 'entregue' THEN valor_total ELSE 0 END), 0) as receita_total
+     FROM pedidos
+     WHERE criado_em >= datetime('now', '-7 days')`
+  ).first<any>();
+
+  // Top produtos hoje (conta itens no itens_json)
+  const pedidosHoje = await c.env.DB.prepare(
+    `SELECT itens_json FROM pedidos
+     WHERE DATE(criado_em) = DATE('now')
+     AND status NOT IN ('cancelado')`
+  ).all<any>();
+
+  const produtosMap: Record<string, { nome: string; quantidade: number; receita: number }> = {};
+  for (const p of pedidosHoje.results || []) {
+    try {
+      const itens = JSON.parse(p.itens_json);
+      const arr = Array.isArray(itens) ? itens : [itens];
+      for (const item of arr) {
+        const qtd = item.quantidade || item.qtd || 0;
+        const preco = item.preco || 0;
+        const key = item.nome;
+        if (!produtosMap[key]) produtosMap[key] = { nome: item.nome, quantidade: 0, receita: 0 };
+        produtosMap[key].quantidade += qtd;
+        produtosMap[key].receita += preco * qtd;
+      }
+    } catch { /* ignora */ }
+  }
+  const topProdutos = Object.values(produtosMap)
+    .sort((a, b) => b.quantidade - a.quantidade)
+    .slice(0, 5);
+
+  // Últimos pedidos (5 mais recentes)
+  const ultimos = await c.env.DB.prepare(
+    `SELECT id, cliente_nome, valor_total, status, origem, pagamento_tipo, criado_em
+     FROM pedidos ORDER BY criado_em DESC LIMIT 8`
+  ).all();
+
+  // Tempo médio de preparo hoje (entregues)
+  const tempoMedio = await c.env.DB.prepare(
+    `SELECT AVG((julianday(atualizado_em) - julianday(criado_em)) * 24 * 60) as minutos
+     FROM pedidos
+     WHERE DATE(criado_em) = DATE('now') AND status = 'entregue'`
+  ).first<any>();
+
+  // Fila atual
+  const fila = await c.env.DB.prepare(
+    `SELECT
+       SUM(CASE WHEN status = 'aguardando_pagamento' THEN 1 ELSE 0 END) as aguardando,
+       SUM(CASE WHEN status = 'pago' THEN 1 ELSE 0 END) as pago,
+       SUM(CASE WHEN status = 'aguardando_retirada' THEN 1 ELSE 0 END) as aguardando_retirada,
+       SUM(CASE WHEN status = 'em_preparo' THEN 1 ELSE 0 END) as em_preparo,
+       SUM(CASE WHEN status = 'pronto' THEN 1 ELSE 0 END) as pronto
+     FROM pedidos
+     WHERE status IN ('aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto')`
+  ).first<any>();
+
+  // Pedidos longos (>15min sem atualização em preparo)
+  const longos = await c.env.DB.prepare(
+    `SELECT COUNT(*) as total
+     FROM pedidos
+     WHERE status = 'em_preparo'
+     AND atualizado_em < datetime('now', '-15 minutes')`
+  ).first<any>();
+
+  return c.json({
+    hoje,
+    semana,
+    topProdutos,
+    ultimos: ultimos.results || [],
+    tempoMedioMinutos: Math.round(tempoMedio?.minutos || 0),
+    fila,
+    pedidosLongos: longos?.total || 0,
+  });
+});
+
 pedidosRouter.get('/fila/ativas', async (c) => {
   const results = await c.env.DB.prepare(
     `SELECT id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, origem, criado_em, atualizado_em
