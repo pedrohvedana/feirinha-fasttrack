@@ -4,48 +4,15 @@
   "graph": {},
   "nodes": [
     {
-      "label": "app.ts",
-      "file_type": "code",
-      "source_file": "api/src/app.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "api_src_app",
-      "community": 0,
-      "community_name": "services/whatsapp.ts",
-      "norm_label": "app.ts"
-    },
-    {
-      "label": "Bindings",
-      "file_type": "code",
-      "source_file": "api/src/app.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "api_src_app_bindings",
-      "community": 0,
-      "community_name": "services/whatsapp.ts",
-      "norm_label": "bindings"
-    },
-    {
-      "label": "criarApp()",
-      "file_type": "code",
-      "source_file": "api/src/app.ts",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "api_src_app_criarapp",
-      "community": 2,
-      "community_name": "routes/whatsapp.test.ts",
-      "norm_label": "criarapp()"
-    },
-    {
       "label": "migrations_entrega.sql",
       "file_type": "code",
       "source_file": "api/migrations_entrega.sql",
       "source_location": null,
       "_origin": "ast",
+      "id": "api_migrations_entrega",
       "community": 31,
       "community_name": "migrations_entrega.sql",
-      "norm_label": "migrations_entrega.sql",
-      "id": "api_migrations_entrega"
+      "norm_label": "migrations_entrega.sql"
     },
     {
       "label": "sequencias",
@@ -53,10 +20,10 @@
       "source_file": "api/migrations_entrega.sql",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "api_migrations_entrega_sequencias",
       "community": 31,
       "community_name": "migrations_entrega.sql",
-      "norm_label": "sequencias",
-      "id": "api_migrations_entrega_sequencias"
+      "norm_label": "sequencias"
     },
     {
       "label": "pedidos.ts",
@@ -64,10 +31,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedidos.ts",
-      "id": "api_src_routes_pedidos"
+      "norm_label": "pedidos.ts"
     },
     {
       "label": "Bindings",
@@ -75,10 +42,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_bindings",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "bindings",
-      "id": "api_src_routes_pedidos_bindings"
+      "norm_label": "bindings"
     },
     {
       "label": "Pedido",
@@ -86,10 +53,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_pedido",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedido",
-      "id": "api_src_routes_pedidos_pedido"
+      "norm_label": "pedido"
     },
     {
       "label": "pedidosRouter",
@@ -97,10 +64,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_pedidosrouter",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedidosrouter",
-      "id": "api_src_routes_pedidos_pedidosrouter"
+      "norm_label": "pedidosrouter"
     },
     {
       "label": "bot.ts",
@@ -108,10 +75,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "api_src_services_bot",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "bot.ts",
-      "id": "api_src_services_bot"
+      "norm_label": "bot.ts"
     },
     {
       "label": "Env",
@@ -119,10 +86,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "api_src_services_bot_env",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "env",
-      "id": "api_src_services_bot_env"
+      "norm_label": "env"
     },
     {
       "label": "ItemCardapio",
@@ -130,10 +97,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L9",
       "_origin": "ast",
+      "id": "api_src_services_bot_itemcardapio",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "itemcardapio",
-      "id": "api_src_services_bot_itemcardapio"
+      "norm_label": "itemcardapio"
     },
     {
       "label": "URL_Rastreio()",
@@ -141,10 +108,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "api_src_services_bot_url_rastreio",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "url_rastreio()",
-      "id": "api_src_services_bot_url_rastreio"
+      "norm_label": "url_rastreio()"
     },
     {
       "label": "gerarIdPedido()",
@@ -152,10 +119,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L17",
       "_origin": "ast",
+      "id": "api_src_services_bot_geraridpedido",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "geraridpedido()",
-      "id": "api_src_services_bot_geraridpedido"
+      "norm_label": "geraridpedido()"
     },
     {
       "label": "CarrinhoItem",
@@ -163,10 +130,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L22",
       "_origin": "ast",
+      "id": "api_src_services_bot_carrinhoitem",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "carrinhoitem",
-      "id": "api_src_services_bot_carrinhoitem"
+      "norm_label": "carrinhoitem"
     },
     {
       "label": "AtendimentoConfig",
@@ -174,10 +141,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L29",
       "_origin": "ast",
+      "id": "api_src_services_bot_atendimentoconfig",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "atendimentoconfig",
-      "id": "api_src_services_bot_atendimentoconfig"
+      "norm_label": "atendimentoconfig"
     },
     {
       "label": "BotDeps",
@@ -185,10 +152,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L38",
       "_origin": "ast",
+      "id": "api_src_services_bot_botdeps",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "botdeps",
-      "id": "api_src_services_bot_botdeps"
+      "norm_label": "botdeps"
     },
     {
       "label": "Conversa",
@@ -196,10 +163,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L47",
       "_origin": "ast",
+      "id": "api_src_services_bot_conversa",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "conversa",
-      "id": "api_src_services_bot_conversa"
+      "norm_label": "conversa"
     },
     {
       "label": "normalizarJid()",
@@ -207,10 +174,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L55",
       "_origin": "ast",
+      "id": "api_src_services_bot_normalizarjid",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "normalizarjid()",
-      "id": "api_src_services_bot_normalizarjid"
+      "norm_label": "normalizarjid()"
     },
     {
       "label": "montarCardapioTexto()",
@@ -218,10 +185,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L64",
       "_origin": "ast",
+      "id": "api_src_services_bot_montarcardapiotexto",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "montarcardapiotexto()",
-      "id": "api_src_services_bot_montarcardapiotexto"
+      "norm_label": "montarcardapiotexto()"
     },
     {
       "label": "calcularTotal()",
@@ -229,10 +196,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L71",
       "_origin": "ast",
+      "id": "api_src_services_bot_calculartotal",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "calculartotal()",
-      "id": "api_src_services_bot_calculartotal"
+      "norm_label": "calculartotal()"
     },
     {
       "label": "validarQtd()",
@@ -240,10 +207,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L75",
       "_origin": "ast",
+      "id": "api_src_services_bot_validarqtd",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "validarqtd()",
-      "id": "api_src_services_bot_validarqtd"
+      "norm_label": "validarqtd()"
     },
     {
       "label": "validarItens()",
@@ -251,10 +218,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L80",
       "_origin": "ast",
+      "id": "api_src_services_bot_validaritens",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "validaritens()",
-      "id": "api_src_services_bot_validaritens"
+      "norm_label": "validaritens()"
     },
     {
       "label": "parseOpcaoMenu()",
@@ -262,10 +229,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L84",
       "_origin": "ast",
+      "id": "api_src_services_bot_parseopcaomenu",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "parseopcaomenu()",
-      "id": "api_src_services_bot_parseopcaomenu"
+      "norm_label": "parseopcaomenu()"
     },
     {
       "label": "tipoPasso()",
@@ -273,10 +240,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L103",
       "_origin": "ast",
+      "id": "api_src_services_bot_tipopasso",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "tipopasso()",
-      "id": "api_src_services_bot_tipopasso"
+      "norm_label": "tipopasso()"
     },
     {
       "label": "criarBot()",
@@ -284,10 +251,10 @@
       "source_file": "api/src/services/bot.ts",
       "source_location": "L120",
       "_origin": "ast",
+      "id": "api_src_services_bot_criarbot",
       "community": 20,
       "community_name": "bot.ts",
-      "norm_label": "criarbot()",
-      "id": "api_src_services_bot_criarbot"
+      "norm_label": "criarbot()"
     },
     {
       "label": "migrations_chatbot.sql",
@@ -827,6 +794,39 @@
       "community_name": "schema.sql",
       "norm_label": "msg_ids",
       "id": "api_schema_msg_ids"
+    },
+    {
+      "label": "app.ts",
+      "file_type": "code",
+      "source_file": "api/src/app.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "services/whatsapp.ts",
+      "norm_label": "app.ts",
+      "id": "api_src_app"
+    },
+    {
+      "label": "Bindings",
+      "file_type": "code",
+      "source_file": "api/src/app.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "services/whatsapp.ts",
+      "norm_label": "bindings",
+      "id": "api_src_app_bindings"
+    },
+    {
+      "label": "criarApp()",
+      "file_type": "code",
+      "source_file": "api/src/app.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "routes/whatsapp.test.ts",
+      "norm_label": "criarapp()",
+      "id": "api_src_app_criarapp"
     },
     {
       "label": "index.ts",
@@ -4606,251 +4606,25 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_app_bindings",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_app_criarapp",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_routes_cardapio",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_routes_pedidos",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_routes_rastrear",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_routes_webhook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/app.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "api_src_app",
-      "target": "api_src_routes_whatsapp",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos_test",
-      "target": "api_src_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/webhook.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_webhook_test",
-      "target": "api_src_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/whatsapp.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_whatsapp_test",
-      "target": "api_src_app"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_app_bindings"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/whatsapp.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_whatsapp",
-      "target": "api_src_app_bindings"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/index.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_index",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos_test",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.test.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos_test_req",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/webhook.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_webhook_test",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/webhook.test.ts",
-      "source_location": "L37",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_webhook_test_postroute",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/whatsapp.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_whatsapp_test",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/whatsapp.test.ts",
-      "source_location": "L83",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_whatsapp_test_post",
-      "target": "api_src_app_criarapp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "api/migrations_entrega.sql",
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_migrations_entrega",
-      "target": "api_migrations_entrega_sequencias"
+      "target": "api_migrations_entrega_sequencias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_pedidos"
     },
     {
       "relation": "contains",
@@ -4859,9 +4633,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_bindings"
+      "target": "api_src_routes_pedidos_bindings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4870,9 +4644,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_pedido"
+      "target": "api_src_routes_pedidos_pedido",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4881,93 +4655,105 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
+      "target": "api_src_routes_pedidos_pedidosrouter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_pix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_pix_criarcobrancapix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_whatsapp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_whatsapp_enviarmensagem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_whatsapp_mensagemempreparo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_whatsapp_mensagempagamentoconfirmado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_routes_pedidos",
+      "target": "api_src_services_whatsapp_mensagempronto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
       "target": "api_src_routes_pedidos_pedidosrouter"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_pix"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_pix_criarcobrancapix"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_enviarmensagem"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagemempreparo"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagempagamentoconfirmado"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/src/routes/pedidos.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagempronto"
     },
     {
       "relation": "imports_from",
@@ -4988,9 +4774,9 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_atendimentoconfig"
+      "target": "api_src_services_bot_atendimentoconfig",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4999,9 +4785,9 @@
       "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_botdeps"
+      "target": "api_src_services_bot_botdeps",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5010,9 +4796,9 @@
       "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_calculartotal"
+      "target": "api_src_services_bot_calculartotal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5021,9 +4807,9 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_carrinhoitem"
+      "target": "api_src_services_bot_carrinhoitem",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5032,9 +4818,9 @@
       "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_conversa"
+      "target": "api_src_services_bot_conversa",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5043,9 +4829,9 @@
       "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_criarbot"
+      "target": "api_src_services_bot_criarbot",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5054,9 +4840,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_env"
+      "target": "api_src_services_bot_env",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5065,9 +4851,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_geraridpedido"
+      "target": "api_src_services_bot_geraridpedido",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5076,9 +4862,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_itemcardapio"
+      "target": "api_src_services_bot_itemcardapio",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5087,9 +4873,9 @@
       "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_montarcardapiotexto"
+      "target": "api_src_services_bot_montarcardapiotexto",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5098,9 +4884,9 @@
       "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_normalizarjid"
+      "target": "api_src_services_bot_normalizarjid",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5109,9 +4895,9 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_parseopcaomenu"
+      "target": "api_src_services_bot_parseopcaomenu",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5120,9 +4906,9 @@
       "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_tipopasso"
+      "target": "api_src_services_bot_tipopasso",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5131,9 +4917,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_url_rastreio"
+      "target": "api_src_services_bot_url_rastreio",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5142,9 +4928,9 @@
       "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_validaritens"
+      "target": "api_src_services_bot_validaritens",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5153,9 +4939,9 @@
       "source_location": "L75",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_bot_validarqtd"
+      "target": "api_src_services_bot_validarqtd",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5165,9 +4951,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_pix"
+      "target": "api_src_services_pix",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5177,9 +4963,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_services_bot",
-      "target": "api_src_services_pix_criarcobrancapix"
+      "target": "api_src_services_pix_criarcobrancapix",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5581,6 +5367,18 @@
       "target": "hono"
     },
     {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/src/app.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_app_criarapp",
+      "target": "api_package_dependencies_hono"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "api/package.json",
@@ -5783,6 +5581,280 @@
       "confidence_score": 1.0,
       "source": "api_schema",
       "target": "api_schema_pedidos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_app_bindings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_cardapio"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_cardapio_cardapiorouter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_rastrear"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_rastrear_rastrearrouter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_webhook"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_webhook_webhookrouter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_whatsapp"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/app.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_app",
+      "target": "api_src_routes_whatsapp_whatsapprouter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_index",
+      "target": "api_src_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_pedidos_test",
+      "target": "api_src_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/webhook.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_webhook_test",
+      "target": "api_src_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/whatsapp.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_whatsapp_test",
+      "target": "api_src_app"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_index",
+      "target": "api_src_app_bindings"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/whatsapp.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_whatsapp",
+      "target": "api_src_app_bindings"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_index",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_pedidos_test",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/pedidos.test.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_pedidos_test_req",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/webhook.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_webhook_test",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/webhook.test.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_webhook_test_postroute",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/whatsapp.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_whatsapp_test",
+      "target": "api_src_app_criarapp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/routes/whatsapp.test.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "api_src_routes_whatsapp_test_post",
+      "target": "api_src_app_criarapp"
     },
     {
       "relation": "contains",
@@ -10427,5 +10499,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ee3c4357e50c0809b8364721743aba4759c0ba5b"
+  "built_at_commit": "9519918f7fd614d796ebc01de861c70bae1654e9"
 }

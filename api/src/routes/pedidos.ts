@@ -205,11 +205,12 @@ pedidosRouter.get('/stats/dashboard', async (c) => {
 });
 
 pedidosRouter.get('/fila/ativas', async (c) => {
+  // Fila ordenada por chegada (mais antigos primeiro)
   const results = await c.env.DB.prepare(
     `SELECT id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, origem, criado_em, atualizado_em
      FROM pedidos
      WHERE status IN ('aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto')
-     ORDER BY atualizado_em ASC`
+     ORDER BY criado_em ASC`
   ).all();
   return c.json(results);
 });
