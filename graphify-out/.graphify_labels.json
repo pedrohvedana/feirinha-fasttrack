@@ -1,7 +1,7 @@
 {
   "0": "services/whatsapp.ts",
   "1": "App.jsx",
-  "2": "app.ts",
+  "2": "routes/whatsapp.test.ts",
   "3": "public/package.json",
   "4": "Fases",
   "5": "Plan: Fluidez para Operador Solo",

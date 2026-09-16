@@ -257,9 +257,12 @@ pedidosRouter.patch('/:id/status', async (c) => {
   if (pedido) {
     const nome = pedido.cliente_nome || 'Cliente';
     let msg = '';
-    if (status === 'pago') msg = mensagemPagamentoConfirmado(nome, id);
-    else if (status === 'em_preparo') msg = mensagemEmPreparo(nome, id);
-    else if (status === 'pronto') msg = mensagemPronto(nome, id);
+    if (status === 'pago') msg = `✅ Pagamento confirmado! Pedido #${id} entrou na fila!\nAcompanhe: https://feirinha.ciavedana.com.br/rastrear/${id}`;
+    else if (status === 'aguardando_retirada') msg = `📍 Você chegou na feirinha! Pedido #${id} aguarda preparo.`;
+    else if (status === 'em_preparo') msg = `🔥 Seu pedido #${id} está sendo preparado! Aguarde...`;
+    else if (status === 'pronto') msg = `✅ Pedido #${id} está pronto! Pode retirar.`;
+    else if (status === 'entregue') msg = `Obrigado pela preferência, ${nome}! 😊`;
+    else if (status === 'cancelado') msg = `Pedido #${id} foi cancelado.`;
 
     if (msg) {
       await enviarMensagem(c.env, pedido.whatsapp, msg);

@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 419 nodes · 519 edges · 36 communities (28 shown, 8 thin omitted)
+- 419 nodes · 520 edges · 36 communities (28 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c288eacc`
+- Built from commit: `ca4b0ee4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -48,7 +48,7 @@
 - pix.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `useAuth()` - 12 edges
+1. `useAuth()` - 13 edges
 2. `Plan: Fluidez para Operador Solo` - 12 edges
 3. `PLAN - Cancelamentos, Lançamentos e Operação Feirinha` - 12 edges
 4. `Onboarding Summary - Feirinha Fast Track` - 12 edges
@@ -169,7 +169,7 @@ Cohesion: 0.27
 Nodes (6): consultarPagamento(), criarCobrancaPix(), Env, formatoExpiraMP(), PixCobranca, pedido
 
 ## Knowledge Gaps
-- **221 isolated node(s):** `STATUS_COLORS`, `STATUS_LABELS`, `conversas`, `atendimento_config`, `bot_msg_ids` (+216 more)
+- **221 isolated node(s):** `conversas`, `atendimento_config`, `bot_msg_ids`, `pedidos`, `msg_ids` (+216 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -180,12 +180,12 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `hono` connect `devDependencies` to `app.ts`?**
   _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **What connects `STATUS_COLORS`, `STATUS_LABELS`, `conversas` to the rest of the system?**
+- **What connects `conversas`, `atendimento_config`, `bot_msg_ids` to the rest of the system?**
   _221 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `services/whatsapp.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10256410256410256 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1039136302294197 - nodes in this community are weakly interconnected._
 - **Should `app.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.11330049261083744 - nodes in this community are weakly interconnected._
 - **Should `public/package.json` be split into smaller, more focused modules?**
