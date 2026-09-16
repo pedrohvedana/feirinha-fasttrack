@@ -54,7 +54,14 @@ pedidosRouter.post('/', async (c) => {
     return c.json({ error: 'WhatsApp é obrigatório' }, 400);
   }
 
-  const id = crypto.randomUUID().slice(0, 8);
+  // ID numérico sequencial (001, 002, ...)
+  const seq = await c.env.DB.prepare(
+    `INSERT INTO sequencias (tipo, ultimo) VALUES ('pedido', 1)
+     ON CONFLICT(tipo) DO UPDATE SET ultimo = ultimo + 1
+     RETURNING ultimo`
+  ).first<{ ultimo: number }>();
+  const id = String(seq?.ultimo ?? 1).padStart(6, '0');
+
   const itens = typeof itens_json === 'string' ? itens_json : JSON.stringify(itens_json);
 
   const stmt = c.env.DB.prepare(

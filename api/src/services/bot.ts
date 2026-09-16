@@ -329,7 +329,14 @@ Escolha uma opção:
   }
 
   async function criarPedido(numero: string, carrinho: CarrinhoItem[], pagamentoTipo: 'pix' | 'dinheiro', nome?: string): Promise<void> {
-    const id = gerarIdPedido();
+    // ID numérico sequencial (igual ao POST /pedidos)
+    const seq = await deps.db
+      .prepare(
+        `INSERT INTO sequencias (tipo, ultimo) VALUES ('pedido', 1)
+         ON CONFLICT(tipo) DO UPDATE SET ultimo = ultimo + 1 RETURNING ultimo`,
+      )
+      .first();
+    const id = String((seq as any)?.ultimo ?? 1).padStart(6, '0');
     const total = calcularTotal(carrinho);
     const itens = carrinho.map((i) => ({ id: i.id, nome: i.nome, preco: i.preco, qtd: i.qtd }));
     await deps.db
