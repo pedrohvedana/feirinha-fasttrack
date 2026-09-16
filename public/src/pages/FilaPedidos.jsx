@@ -37,32 +37,54 @@ export default function FilaPedidos() {
     if (!audioContextRef.current) {
       audioContextRef.current = new (window.AudioContext || window.webkitAudioContext)();
     }
-    if (audioContextRef.current.state === 'suspended') {
+    try {
+      if (audioContextRef.current.state === 'running') return;
       await audioContextRef.current.resume();
-    }
+    } catch { /* ok silenciar */ }
   }
 
-  function tocarBeep() {
+  async function tocarBeep(frequencia = 880, duracao = 0.2) {
     if (!audioContextRef.current) return;
-    const ctx = audioContextRef.current;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.value = 880;
-    gain.gain.value = 0.3;
-    osc.connect(gain).connect(ctx.destination);
-    osc.start();
-    osc.stop(ctx.currentTime + 0.15);
+    try {
+      const ctx = audioContextRef.current;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.frequency.value = frequencia;
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.2, ctx.currentTime);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duracao);
+    } catch { /* silenciar */ }
   }
 
   function falar(texto) {
     if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = 'pt-BR';
+    utterance.volume = 1;
     utterance.rate = 1;
     utterance.pitch = 1;
-    utterance.volume = 1;
-    speechSynthesis.speak(utterance);
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function falarAtivarSom() {
+    falar('Som ativado. Ocupando áudio!');
+    tocarBeep(1000, 0.1);
+  }
+
+  async function toggleSom() {
+    const novo = !somAtivado;
+    setSomAtivado(novo);
+    localStorage.setItem('feirinha_som', novo ? '1' : '0');
+    if (novo) {
+      await initAudio();
+      // Toca um toque curto pra confirmar ativação
+      tocarBeep(880, 0.15);
+      setTimeout(() => tocarBeep(1320, 0.1), 150);
+      try { falar('Áudio de novos pedidos ativado'); } catch { }
+    }
   }
 
   async function carregar() {
@@ -77,6 +99,10 @@ export default function FilaPedidos() {
 
         if (idsNovos.length > 0 && somAtivado) {
           await initAudio();
+          try {
+            await audioContextRef.current.resume();
+          } catch { }
+
           for (const p of idsNovos) {
             const nome = p.cliente_nome || 'Cliente';
             const primeiroItem = (() => {
@@ -87,7 +113,8 @@ export default function FilaPedidos() {
                 return 'pedido';
               }
             })();
-            tocarBeep();
+            tocarBeep(660, 0.15);
+            setTimeout(() => tocarBeep(880, 0.15), 150);
             falar(`Novo pedido de ${nome} — ${primeiroItem}`);
           }
         }
@@ -108,6 +135,13 @@ export default function FilaPedidos() {
     const t = setInterval(carregar, 5000);
     return () => clearInterval(t);
   }, []);
+
+  // Ativa som se usuário ja deixou ON antes
+  useEffect(() => {
+    if (somAtivado && !audioContextRef.current) {
+      initAudio().catch(() => {});
+    }
+  }, [somAtivado]);
 
   async function avancarStatus(id, statusAtual) {
     const proximo = { pago: 'em_preparo', aguardando_retirada: 'em_preparo', em_preparo: 'pronto' }[statusAtual];

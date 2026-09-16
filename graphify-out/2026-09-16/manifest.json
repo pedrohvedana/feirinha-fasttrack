@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
-    "mtime": 1789522670.76986,
-    "ast_hash": "fd6c364d91edb87893e526e0afb33f2d",
+    "mtime": 1789566644.222635,
+    "ast_hash": "2bd5c1e5b2ad63714db2fe25eb5099e4",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.ts": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Dashboard.jsx": {
-    "mtime": 1789515727.4513276,
-    "ast_hash": "42bc85012ec9911cd4e201b3fbba2f8a",
+    "mtime": 1789560481.709973,
+    "ast_hash": "b17c879d18da063cc470044835e142b6",
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "api/src/app.ts": {
-    "mtime": 1789515727.419962,
-    "ast_hash": "355ed5b9953e05a716af5a5b5ef239fc",
+    "mtime": 1789527680.6847,
+    "ast_hash": "24114cadff85dca94d596debb2d246d2",
     "semantic_hash": ""
   },
   "api/src/migrations/migrations_chatbot.test.ts": {
