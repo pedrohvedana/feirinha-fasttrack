@@ -240,7 +240,13 @@ export default function FilaPedidos() {
             itens = [];
           }
 
-          return (
+  function fmtPreco(valor) {
+    if (valor == null || valor === '') return '—';
+    const num = typeof valor === 'string' ? parseFloat(valor.replace(',', '.')) : Number(valor);
+    return isNaN(num) ? '—' : `R$ ${num.toFixed(2).replace('.', ',')}`;
+  }
+
+  return (
             <div key={p.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
@@ -253,20 +259,20 @@ export default function FilaPedidos() {
                     {p.origem === 'balcao' && <span className="text-xs px-2 py-0.5 rounded-full bg-gray-200 text-gray-600">Balcão</span>}
                   </div>
 
-                  <div className="text-sm text-gray-700 space-y-1 mb-2">
+                    <div className="text-sm text-gray-700 space-y-1 mb-2">
                     {itens.map((item, idx) => (
                       <div key={idx} className="flex justify-between">
                         <span>{item.quantidade}x {item.nome}</span>
-                        <span className="font-medium">R$ {(item.preco * item.quantidade).toFixed(2)}</span>
+                        <span className="font-medium">{fmtPreco(item.preco * item.quantidade)}</span>
                       </div>
                     ))}
-                  </div>
+                    </div>
 
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <span>Total: <span className="font-bold text-gray-900">R$ {Number(p.valor_total).toFixed(2)}</span></span>
-                    <span>•</span>
-                    <span className="capitalize">{p.pagamento_tipo}</span>
-                  </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <span>Total: <span className="font-bold text-gray-900">{fmtPreco(p.valor_total)}</span></span>
+                      <span>•</span>
+                      <span className="capitalize">{p.pagamento_tipo}</span>
+                    </div>
                 </div>
 
                 <button

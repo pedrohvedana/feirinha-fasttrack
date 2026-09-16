@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../api';
+import { fmtPreco } from '../lib/formatters';
 
 const STATUS_CONFIG = {
   aguardando_pagamento: { label: 'Aguardando Pagamento', cor: 'bg-yellow-100 text-yellow-800', icone: '⏳' },
@@ -124,7 +125,9 @@ export default function PedidoRastreio() {
           <div className="p-6 space-y-6">
             <div className="text-center">
               <p className="text-sm text-gray-500">Código do Pedido</p>
-              <p className="text-3xl font-bold font-mono text-gray-900">#{pedido.id}</p>
+              <p className="text-3xl font-bold font-mono text-gray-900">#{p.id}
+                <p className="text-xl text-gray-900 mt-1">{pedido.cliente_nome || 'Cliente'}</p>
+                <p className="text-gray-500 text-sm">{fmtPreco(pedido.valor_total)}</p></p>
             </div>
 
             {pedido.cliente_nome && (
@@ -141,8 +144,9 @@ export default function PedidoRastreio() {
                   <div key={idx} className="flex justify-between py-2 border-b border-gray-100 last:border-0">
                     <div>
                       <p className="font-medium text-gray-900">{item.quantidade}x {item.nome}</p>
+                      <p className="text-sm text-gray-600">{fmtPreco(item.preco)}</p>
                     </div>
-                    <p className="text-gray-700 font-semibold">R$ {(item.preco * item.quantidade).toFixed(2)}</p>
+                    <p className="text-gray-700 font-semibold">{fmtPreco(item.preco * item.quantidade)}</p>
                   </div>
                 ))}
               </div>

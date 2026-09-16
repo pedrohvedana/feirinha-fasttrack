@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { api } from '../api';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth';
+import { fmtPreco } from '../lib/formatters';
 
 const STATUS_COLORS = {
   aguardando_pagamento: 'bg-yellow-100 text-yellow-800',
@@ -176,13 +177,13 @@ export default function Cozinha() {
                 {itens.map((item, idx) => (
                   <div key={idx} className="flex justify-between text-gray-100 text-lg">
                     <span className="font-medium">{item.quantidade}x {item.nome}</span>
-                    <span className="text-emerald-300">R$ {(item.preco * item.quantidade).toFixed(2)}</span>
+                    <span className="text-emerald-300">{fmtPreco(item.preco * item.quantidade)}</span>
                   </div>
                 ))}
               </div>
 
               <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                <span>Total: <span className="font-bold text-white">R$ {Number(p.valor_total).toFixed(2)}</span></span>
+                <span>Total: <span className="font-bold text-white">{fmtPreco(p.valor_total)}</span></span>
                 <span>•</span>
                 <span className="capitalize text-gray-400">{p.pagamento_tipo}</span>
               </div>
