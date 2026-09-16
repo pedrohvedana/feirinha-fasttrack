@@ -54,7 +54,14 @@ pedidosRouter.post('/', async (c) => {
     return c.json({ error: 'WhatsApp é obrigatório' }, 400);
   }
 
-  const id = crypto.randomUUID().slice(0, 8);
+  // ID numérico sequencial (001, 002, ...)
+  const seq = await c.env.DB.prepare(
+    `INSERT INTO sequencias (tipo, ultimo) VALUES ('pedido', 1)
+     ON CONFLICT(tipo) DO UPDATE SET ultimo = ultimo + 1
+     RETURNING ultimo`
+  ).first<{ ultimo: number }>();
+  const id = String(seq?.ultimo ?? 1).padStart(6, '0');
+
   const itens = typeof itens_json === 'string' ? itens_json : JSON.stringify(itens_json);
 
   const stmt = c.env.DB.prepare(
@@ -198,11 +205,22 @@ pedidosRouter.get('/stats/dashboard', async (c) => {
 });
 
 pedidosRouter.get('/fila/ativas', async (c) => {
+  // Fila: primeiro quem chegou (urgente), depois em preparo, depois pago, por mais recente (atualizado_em DESC)
   const results = await c.env.DB.prepare(
     `SELECT id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, status, origem, criado_em, atualizado_em
      FROM pedidos
-     WHERE status IN ('aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto')
-     ORDER BY atualizado_em ASC`
+     WHERE status IN ('aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto', 'entregue')
+     ORDER BY
+       CASE
+         WHEN status = 'aguardando_retirada' THEN 0
+         WHEN status = 'em_preparo' THEN 1
+         WHEN status = 'pago' THEN 2
+         WHEN status = 'aguardando_pagamento' THEN 3
+         WHEN status = 'pronto' THEN 4
+         WHEN status = 'entregue' THEN 5
+         ELSE 6
+       END ASC,
+       atualizado_em DESC`
   ).all();
   return c.json(results);
 });

@@ -30,6 +30,8 @@
   "28": "migrations_chatbot_seed.sql",
   "29": "vitest.config.ts",
   "30": "migrations_chatbot_lembrete.sql",
-  "31": "expiracao-pix.ts",
-  "32": "migrations_chatbot_origem.sql"
+  "32": "migrations_chatbot_origem.sql",
+  "33": "PLAN - Fluxo Compra Remota + Chegada no Local",
+  "34": "PLAN - Cancelamentos, Lançamentos e Operação Feirinha",
+  "35": "pix.ts"
 }

@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "api/src/app.ts": {
-    "mtime": 1789527680.6847,
-    "ast_hash": "24114cadff85dca94d596debb2d246d2",
+    "mtime": 1789515727.419962,
+    "ast_hash": "355ed5b9953e05a716af5a5b5ef239fc",
     "semantic_hash": ""
   },
   "api/src/migrations/migrations_chatbot.test.ts": {

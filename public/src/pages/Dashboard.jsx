@@ -30,8 +30,22 @@ function fmtHora(iso) {
   } catch { return ''; }
 }
 
+function fmtTempo(iso, agora) {
+  if (!iso) return '';
+  try {
+    const criado = new Date(iso).getTime();
+    const diffMin = Math.floor((agora - criado) / 60000);
+    if (diffMin < 1) return 'agora';
+    if (diffMin < 60) return `${diffMin}m`;
+    const horas = Math.floor(diffMin / 60);
+    const mins = diffMin % 60;
+    return `${horas}h${mins > 0 ? `${mins}m` : ''}`;
+  } catch { return ''; }
+}
+
 export default function Dashboard() {
   const [dados, setDados] = useState(null);
+  const [agora, setAgora] = useState(Date.now());
   const [carregando, setCarregando] = useState(true);
   const { logout } = useAuth();
 
@@ -45,6 +59,7 @@ export default function Dashboard() {
   }
 
   useEffect(() => { carregar(); const t = setInterval(carregar, 10000); return () => clearInterval(t); }, []);
+  useEffect(() => { const t = setInterval(() => setAgora(Date.now()), 30000); return () => clearInterval(t); }, []);
 
   if (carregando) {
     return (
@@ -230,7 +245,7 @@ export default function Dashboard() {
                   {p.origem === 'prepedido' && <span className="text-xs text-violet-600">WHATSAPP</span>}
                   <span className="text-xs text-gray-400 capitalize">{p.pagamento_tipo}</span>
                   <span className="font-bold text-gray-900 text-sm whitespace-nowrap">R$ {Number(p.valor_total).toFixed(2)}</span>
-                  <span className="text-xs text-gray-400">{fmtHora(p.criado_em)}</span>
+                  <span className="text-xs text-gray-400">{fmtTempo(p.criado_em, agora)}</span>
                 </li>
               ))}
             </ul>

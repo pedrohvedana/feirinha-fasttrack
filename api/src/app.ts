@@ -17,12 +17,16 @@ export function criarApp() {
   const app = new Hono<{ Bindings: Bindings }>();
 
   app.use('*', cors({
-    origin: [
-      'http://localhost:5173',
-      'https://feirinha-ui.pages.dev',
-      'https://master.feirinha-ui.pages.dev',
-      'https://feirinha.ciavedana.com.br',
-    ],
+    origin: (origin) => {
+      const allowed = [
+        'http://localhost:5173',
+        'https://feirinha-ui.pages.dev',
+        'https://feirinha.ciavedana.com.br',
+      ];
+      if (allowed.includes(origin)) return origin;
+      if (origin.endsWith('.feirinha-ui.pages.dev')) return origin; // qualquer subdomínio (preview, feat, master)
+      return null;
+    },
     allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   }));
 
