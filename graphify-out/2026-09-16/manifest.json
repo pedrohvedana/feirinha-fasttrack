@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1789573464.5126996,
-    "ast_hash": "a86e4911f73f04be5b58820fe1d4b5e7",
+    "mtime": 1789577074.543674,
+    "ast_hash": "444e83107202e4f2134bc49e544e26fb",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Cozinha.jsx": {
-    "mtime": 1789515727.4513276,
-    "ast_hash": "c53404c57f96fd8f9f08d77f01fb04e1",
+    "mtime": 1789577991.797297,
+    "ast_hash": "fcacaf9e8032f70f405320ae034ef77f",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm2.jsx": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/PedidoRastreio.jsx": {
-    "mtime": 1789515727.4513276,
-    "ast_hash": "1e2d310406e885760328c6fa8a05722f",
+    "mtime": 1789578496.9889243,
+    "ast_hash": "865a0e37f12610ee5d61a1eb132402db",
     "semantic_hash": ""
   },
   ".claude/PRPs/plans/fluidez-operador-solo.plan.md": {
@@ -332,6 +332,11 @@
   "api/migrations_entrega.sql": {
     "mtime": 1789572063.1617296,
     "ast_hash": "3af59332a1df406a70ddc129b8630b73",
+    "semantic_hash": ""
+  },
+  "public/src/lib/formatters.js": {
+    "mtime": 1789577642.248634,
+    "ast_hash": "ea0914f7c1d9b52f5467496b71cca396",
     "semantic_hash": ""
   }
 }

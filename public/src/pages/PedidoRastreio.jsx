@@ -153,7 +153,7 @@ export default function PedidoRastreio() {
 
               <div className="flex justify-between pt-3 border-t border-gray-100 mt-3">
                 <span className="text-lg font-medium text-gray-900">Total</span>
-                <span className="text-xl font-bold text-emerald-600">R$ {Number(pedido.valor_total).toFixed(2)}</span>
+                <span className="text-xl font-bold text-emerald-600">{fmtPreco(pedido.valor_total)}</span>
               </div>
             </div>
 

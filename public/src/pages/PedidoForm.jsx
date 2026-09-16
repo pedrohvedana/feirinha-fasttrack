@@ -55,11 +55,13 @@ export default function PedidoForm() {
     setEnviando(true);
     setErro(null);
     try {
+      // Normaliza valor para número (evita string com R$)
+      const valorNumerico = itens.reduce((s, i) => s + (i.preco || 0) * (i.quantidade || 0), 0);
       const pedido = await api.criarPedido({
         cliente_nome: clienteNome || 'Cliente',
         whatsapp: whatsapp.replace(/\D/g, ''),
         itens_json: itens,
-        valor_total: valorTotal,
+        valor_total: valorNumerico,
         pagamento_tipo: pagamentoTipo,
       });
       setSucesso(pedido);

@@ -65,10 +65,19 @@ pedidosRouter.post('/', async (c) => {
   const itens = typeof itens_json === 'string' ? itens_json : JSON.stringify(itens_json);
 
   const stmt = c.env.DB.prepare(
-    `INSERT INTO pedidos (id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, origem, status)
-     VALUES (?, ?, ?, ?, ?, ?, ?, 'aguardando_pagamento')`
+    "INSERT INTO pedidos (id, cliente_nome, whatsapp, itens_json, valor_total, pagamento_tipo, origem, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'aguardando_pagamento')"
   );
-  await stmt.bind(id, cliente_nome || null, whatsapp || null, itens, valor_total, pagamento_tipo, origemFinal).run();
+
+  // Normaliza valor_total: converte "R$ 80,00" ou "80" para número
+  function normalizarValor(v: unknown): number {
+    if (v == null || v === '') return 0;
+    const str = String(v).replace(/[R$\s]/g, '').replace(',', '.').replace(/[^\d.]/g, '');
+    const num = parseFloat(str) || 0;
+    return num > 0 ? num : 0;
+  }
+  const valorTotalNumerico = normalizarValor(valor_total);
+
+  await stmt.bind(id, cliente_nome || null, whatsapp || null, itens, valorTotalNumerico, pagamento_tipo, origemFinal).run();
 
   let pix = null;
   if (pagamento_tipo === 'pix') {
