@@ -1,32 +1,32 @@
 {
   "api/package.json": {
-    "mtime": 1789397001.9327683,
-    "ast_hash": "ba332bcf306424a09f9050e55bd8dc01",
+    "mtime": 1789515727.419962,
+    "ast_hash": "f34708ab9c53ff5852c6082c68645f2f",
     "semantic_hash": ""
   },
   "api/schema.sql": {
-    "mtime": 1789427150.00518,
-    "ast_hash": "b85cf90d280ff9798a314b93d0cc8bda",
+    "mtime": 1789515727.419962,
+    "ast_hash": "3b7fff2eb240213335e97290cc12f04c",
     "semantic_hash": ""
   },
   "api/src/index.ts": {
-    "mtime": 1789418810.715566,
-    "ast_hash": "9e324d93866e11070e7539816432b284",
+    "mtime": 1789515727.419962,
+    "ast_hash": "d6b78258b7f070251aa6928c505346f0",
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
-    "mtime": 1789513711.87781,
-    "ast_hash": "e15fce645ccb5cd12a901519885213d4",
+    "mtime": 1789515727.419962,
+    "ast_hash": "2b70375ab38d53f005797e0b4794aace",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.ts": {
-    "mtime": 1789383906.850859,
-    "ast_hash": "26355cdbc13c1ce1147ab2753c91697b",
+    "mtime": 1789515727.419962,
+    "ast_hash": "26dc9cdfbf36e8d6125f6a8ff0c90920",
     "semantic_hash": ""
   },
   "api/src/services/whatsapp.ts": {
-    "mtime": 1789418653.6912038,
-    "ast_hash": "c90f93d8825956334cde41c18601bf84",
+    "mtime": 1789515727.43566,
+    "ast_hash": "bcc060df23d4d70f0d38492122719caa",
     "semantic_hash": ""
   },
   "api/test-api.js": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "api/tsconfig.json": {
-    "mtime": 1789397133.1204185,
-    "ast_hash": "aee0b1c9224ae52bf62e87c94ea3f68c",
+    "mtime": 1789515727.43566,
+    "ast_hash": "aadaff7b2dbf7ba1fb773c4d513d12b5",
     "semantic_hash": ""
   },
   "public/package.json": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "public/src/api.js": {
-    "mtime": 1789513818.9244103,
-    "ast_hash": "41e5dce46eaaa6764c842a377e70a472",
+    "mtime": 1789515727.4513276,
+    "ast_hash": "22b08ef1df2b983fd0cfa6b2a1133753",
     "semantic_hash": ""
   },
   "public/src/main.jsx": {
@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "public/src/pages/Dashboard.jsx": {
-    "mtime": 1789514070.8614028,
-    "ast_hash": "73a6fead1878aeb2a25e0801929acbad",
+    "mtime": 1789515727.4513276,
+    "ast_hash": "42bc85012ec9911cd4e201b3fbba2f8a",
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1789436062.4681783,
-    "ast_hash": "657884f090407746d6517fff2e13f331",
+    "mtime": 1789515727.4513276,
+    "ast_hash": "5044b78b8c61481c4c73894b0bc6935a",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1789384045.8047237,
-    "ast_hash": "022ff87059dbda6aff12fa98da6969dd",
+    "mtime": 1789515727.419962,
+    "ast_hash": "168c65ef8d7d9c477b783b92def38f12",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Cozinha.jsx": {
-    "mtime": 1789511794.932929,
-    "ast_hash": "88775717c007b20e33cde2620045f1f7",
+    "mtime": 1789515727.4513276,
+    "ast_hash": "c53404c57f96fd8f9f08d77f01fb04e1",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm2.jsx": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/PedidoRastreio.jsx": {
-    "mtime": 1789511507.0432193,
-    "ast_hash": "3ec9203efa1d78ca1d3076581b1d1e7e",
+    "mtime": 1789515727.4513276,
+    "ast_hash": "1e2d310406e885760328c6fa8a05722f",
     "semantic_hash": ""
   },
   ".claude/PRPs/plans/fluidez-operador-solo.plan.md": {
@@ -185,148 +185,148 @@
     "semantic_hash": ""
   },
   "api/migrations_chatbot.sql": {
-    "mtime": 1789396031.2794192,
-    "ast_hash": "485c42b63383e4de6017712cc7024e54",
+    "mtime": 1789515727.419962,
+    "ast_hash": "c95cf3ca73f4e0cef3d8a84f638f30a1",
     "semantic_hash": ""
   },
   "api/migrations_chatbot_msg_ids.sql": {
-    "mtime": 1789396767.526028,
-    "ast_hash": "30b2fe1fe6de5f55fb78670d429ab70d",
+    "mtime": 1789515727.419962,
+    "ast_hash": "5b2ba6e0f492c7fab4d55e6baf6ca857",
     "semantic_hash": ""
   },
   "api/migrations_chatbot_seed.sql": {
-    "mtime": 1789396076.55797,
-    "ast_hash": "f450a9bdc571e3c41fa4d5fd27f07330",
+    "mtime": 1789515727.419962,
+    "ast_hash": "0af15b685d71b9a97ce5a678dd8ab827",
     "semantic_hash": ""
   },
   "api/migrations_chatbot_spam.sql": {
-    "mtime": 1789399743.8845387,
-    "ast_hash": "b32418092f43d572a678300b5a02ed15",
+    "mtime": 1789515727.419962,
+    "ast_hash": "9edc0e6ee83b5c4bcc73fb8a238df34b",
     "semantic_hash": ""
   },
   "api/src/app.ts": {
-    "mtime": 1789420316.865678,
-    "ast_hash": "96ca4ccab379d61c79f3e9ad372e10de",
+    "mtime": 1789515727.419962,
+    "ast_hash": "355ed5b9953e05a716af5a5b5ef239fc",
     "semantic_hash": ""
   },
   "api/src/migrations/migrations_chatbot.test.ts": {
-    "mtime": 1789396064.3909178,
-    "ast_hash": "4c2411162f27ecb3eee21e6040b0621f",
+    "mtime": 1789515727.419962,
+    "ast_hash": "4e3ede8ce898034fec7dc8db5173503e",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.test.ts": {
-    "mtime": 1789412823.0291102,
-    "ast_hash": "e2e8c8bb949a4ea3e4b9899a1a56b056",
+    "mtime": 1789515727.419962,
+    "ast_hash": "516a2007f42355de5a5bb8ba7fc3cab4",
     "semantic_hash": ""
   },
   "api/src/routes/whatsapp.test.ts": {
-    "mtime": 1789412899.8629942,
-    "ast_hash": "2d4324c613016f8e16d2d1911d93f014",
+    "mtime": 1789515727.419962,
+    "ast_hash": "4e7501854c4710ed052d02c493cbb866",
     "semantic_hash": ""
   },
   "api/src/routes/whatsapp.ts": {
-    "mtime": 1789510210.355066,
-    "ast_hash": "64a711f9c6f9ef651e3d04244a8aede5",
+    "mtime": 1789515727.419962,
+    "ast_hash": "14902083445888ece73154175ef85a90",
     "semantic_hash": ""
   },
   "api/src/services/antispam.test.ts": {
-    "mtime": 1789399656.7914116,
-    "ast_hash": "af3b19b2949d4d25fb4dec4ad9783c9e",
+    "mtime": 1789515727.419962,
+    "ast_hash": "6cd03f6cee8f8b983ca8c7827261bb68",
     "semantic_hash": ""
   },
   "api/src/services/antispam.ts": {
-    "mtime": 1789399691.6278965,
-    "ast_hash": "ce5521b6453390897430fa5531151187",
+    "mtime": 1789515727.419962,
+    "ast_hash": "26c84d1101577386f2099151f736f0d3",
     "semantic_hash": ""
   },
   "api/src/services/bot-flow.test.ts": {
-    "mtime": 1789510967.204963,
-    "ast_hash": "fab5218ee1e3f79a77a00173bb923eee",
+    "mtime": 1789515727.419962,
+    "ast_hash": "56494ab79acc5d9d03387159f64d2985",
     "semantic_hash": ""
   },
   "api/src/services/bot.test.ts": {
-    "mtime": 1789396124.796651,
-    "ast_hash": "58b8447c4953f16af56b60361e2d6c17",
+    "mtime": 1789515727.419962,
+    "ast_hash": "4daa7b8375beb0d80f38794dd2cf4c60",
     "semantic_hash": ""
   },
   "api/src/services/bot.ts": {
-    "mtime": 1789510422.5848918,
-    "ast_hash": "e7580c138c2d9f4f1f4b327f94fe5f16",
+    "mtime": 1789515727.43566,
+    "ast_hash": "30ad6a691a20ac12530cb8841829ddcf",
     "semantic_hash": ""
   },
   "api/src/services/pix.test.ts": {
-    "mtime": 1789401916.9525025,
-    "ast_hash": "0c59343c7f8ed278983bf3775e0303f3",
+    "mtime": 1789515727.43566,
+    "ast_hash": "efccd3858ef190a8f730d1ddb51e80f2",
     "semantic_hash": ""
   },
   "api/src/services/whatsapp.test.ts": {
-    "mtime": 1789401860.8250418,
-    "ast_hash": "3e1c78a8e3ab00975afd0015737888e7",
+    "mtime": 1789515727.43566,
+    "ast_hash": "2e800ecfa46b27cd5e7850385e21a723",
     "semantic_hash": ""
   },
   "api/src/test/fake-d1.ts": {
-    "mtime": 1789426339.427148,
-    "ast_hash": "d1de37fb1c14ad7ee9030cc5b52061ac",
+    "mtime": 1789515727.43566,
+    "ast_hash": "f9bff77784449e537e3c23a1bc22e171",
     "semantic_hash": ""
   },
   "api/vitest.config.ts": {
-    "mtime": 1789400502.6287725,
-    "ast_hash": "b502b5c306da46a96ff7619e638c7d94",
+    "mtime": 1789515727.43566,
+    "ast_hash": "7ee087ad5fe35eaaf18eaa0c2eabe75f",
     "semantic_hash": ""
   },
   "api/worker-configuration.d.ts": {
-    "mtime": 1789397004.725405,
-    "ast_hash": "dec6d4048d04033a4427a1326204a696",
+    "mtime": 1789515727.43566,
+    "ast_hash": "8ddf81d761de72edd59cab4393d1a833",
     "semantic_hash": ""
   },
   ".planning/PLAN-wa-akg-chatbot.md": {
-    "mtime": 1789395742.2114553,
-    "ast_hash": "736c388ce1376596baa7bffcb5c0c891",
+    "mtime": 1789515727.404298,
+    "ast_hash": "2aaafb2730609c456843f38f9007ce83",
     "semantic_hash": ""
   },
   "deploy/wa-akg/docker-compose.yml": {
-    "mtime": 1789385306.1252043,
-    "ast_hash": "8af09ba408aaa50543dc045fc029790e",
+    "mtime": 1789515727.43566,
+    "ast_hash": "9d431b6b3bfd9446305e9c6aabc1d22c",
     "semantic_hash": ""
   },
   "api/migrations_chatbot_lembrete.sql": {
-    "mtime": 1789420604.5554676,
+    "mtime": 1789515727.419962,
     "ast_hash": "54b61cd40a850020584ce749a28bc157",
     "semantic_hash": ""
   },
   "api/src/services/expiracao-pix.test.ts": {
-    "mtime": 1789419838.0242274,
-    "ast_hash": "cbea246244af54d8716e1e8a274f19dc",
+    "mtime": 1789515727.43566,
+    "ast_hash": "64c237748a397a5727f984134b844863",
     "semantic_hash": ""
   },
   "api/src/services/expiracao-pix.ts": {
-    "mtime": 1789420493.0632198,
-    "ast_hash": "ae8f3f49662e714b8ec87937f3930921",
+    "mtime": 1789515727.43566,
+    "ast_hash": "f98d8dfe9d2d51aa4ad18ae5c9511db1",
     "semantic_hash": ""
   },
   ".github/workflows/deploy.yml": {
-    "mtime": 1789420148.2041795,
-    "ast_hash": "3de5820bef8fc443440c3e75b2a3a2c8",
+    "mtime": 1789515727.404298,
+    "ast_hash": "df6626f09846ee22a5995f84a017e739",
     "semantic_hash": ""
   },
   "api/migrations_chatbot_origem.sql": {
-    "mtime": 1789429183.772184,
+    "mtime": 1789515727.419962,
     "ast_hash": "4b406e1e1f4c68a5fa50da1747557a2b",
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.test.ts": {
-    "mtime": 1789426773.1853118,
-    "ast_hash": "5eb46f913f0688660ef512533d949ae3",
+    "mtime": 1789515727.419962,
+    "ast_hash": "70ee670bd05cdf8a3cd4dc4203ce0d6e",
     "semantic_hash": ""
   },
   ".planning/PLAN-fluxo-compra-remota.md": {
-    "mtime": 1789508717.5628445,
-    "ast_hash": "11af7f8e7636b2d6e6af668b4a26b123",
+    "mtime": 1789515727.404298,
+    "ast_hash": "4d12839e9c5bec9e504c6d584282ae8f",
     "semantic_hash": ""
   },
   ".planning/PLAN-pagamento-operacao.md": {
-    "mtime": 1789508119.04644,
-    "ast_hash": "819a5e7b0f7463454aa0c9aeb8606578",
+    "mtime": 1789515727.404298,
+    "ast_hash": "7f43d908621abf8733c4c75b9d793948",
     "semantic_hash": ""
   }
 }

@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "api/src/routes/pedidos.ts": {
-    "mtime": 1789515727.419962,
-    "ast_hash": "2b70375ab38d53f005797e0b4794aace",
+    "mtime": 1789522670.76986,
+    "ast_hash": "fd6c364d91edb87893e526e0afb33f2d",
     "semantic_hash": ""
   },
   "api/src/routes/webhook.ts": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "api/src/services/bot.ts": {
-    "mtime": 1789515727.43566,
-    "ast_hash": "30ad6a691a20ac12530cb8841829ddcf",
+    "mtime": 1789523605.9119046,
+    "ast_hash": "f976189a9c576761d065f47d0f911571",
     "semantic_hash": ""
   },
   "api/src/services/pix.test.ts": {
@@ -327,6 +327,11 @@
   ".planning/PLAN-pagamento-operacao.md": {
     "mtime": 1789515727.404298,
     "ast_hash": "7f43d908621abf8733c4c75b9d793948",
+    "semantic_hash": ""
+  },
+  "api/migrations_entrega.sql": {
+    "mtime": 1789522431.4448326,
+    "ast_hash": "c9cb8058a59542b48f16c4798f29e756",
     "semantic_hash": ""
   }
 }
