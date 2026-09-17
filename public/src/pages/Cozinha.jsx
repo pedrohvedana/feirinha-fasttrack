@@ -115,10 +115,12 @@ export default function Cozinha() {
               className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
                 filtro === f
                   ? 'bg-emerald-600 text-white'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  : f === 'aguardando_retirada' && pedidos.some(p => p.status === 'aguardando_retirada')
+                    ? 'bg-violet-600 text-white animate-pulse'
+                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
-              {f === 'todos' ? 'Todos' : STATUS_LABELS[f]}
+              {f === "todos" ? `Todos (${pedidos.length})` : STATUS_LABELS[f]}
             </button>
           ))}
         </div>
@@ -190,9 +192,9 @@ export default function Cozinha() {
 
               <button
                 onClick={() => avancarStatus(p.id, p.status)}
-                disabled={!['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)}
+                disabled={!['pago', 'aguardando_retirada', 'em_preparo', 'pronto'].includes(p.status)}
                 className={`w-full py-3 rounded-xl font-bold text-lg transition ${
-                  ['pago', 'aguardando_retirada', 'em_preparo'].includes(p.status)
+                  ['pago', 'aguardando_retirada', 'em_preparo', 'pronto'].includes(p.status)
                     ? 'bg-emerald-600 text-white hover:bg-emerald-700'
                     : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                 }`}

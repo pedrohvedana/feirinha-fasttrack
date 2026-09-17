@@ -21,7 +21,7 @@
   "19": "test-api.js",
   "20": "bot.ts",
   "21": "Etapas",
-  "22": "routes/whatsapp.ts",
+  "22": "app.ts",
   "23": "migrations_chatbot.sql",
   "24": "migrations_chatbot.test.ts",
   "25": "migrations_chatbot_msg_ids.sql",
@@ -34,5 +34,5 @@
   "32": "migrations_chatbot_origem.sql",
   "33": "PLAN - Fluxo Compra Remota + Chegada no Local",
   "34": "PLAN - Cancelamentos, Lançamentos e Operação Feirinha",
-  "35": "pix.ts"
+  "35": "expiracao-pix.ts"
 }

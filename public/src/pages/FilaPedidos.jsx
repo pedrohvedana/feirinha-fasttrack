@@ -145,25 +145,43 @@ export default function FilaPedidos() {
     }
   }, [somAtivado]);
 
-  async function avancarStatus(id, statusAtual) {
-    // Fluxo completo aos poucos avançando
+  async function avancarStatus(id, statusAtual, origem, pagamentoTipo) {
+    // Se é balcão/presencial com dinheiro ou cartão, já está na feira!
+    // Vai direto para em_preparo após confirmação (ozkura todo)
+    const ehBalcao = origem === 'balcao';
+
+    // Se é balcão e está aguardando pagamento dinheiro/cartão
+    // Confirmar e já ser direto para em_preparo = "Iniciar Preparo"
+    if (ehBalcao && statusAtual === 'aguardando_pagamento') {
+      try {
+        // Confirma pagamento (pulsar confirmação PIX- manual)
+        await api.atualizarStatus(id, 'em_preparo');
+        carregar();
+      } catch { /* silenciar */ }
+      return;
+    }
+
+    // Fluxo whatsapp/prepedido (PIX, remoto)
+    // aguardando_pagamento → confirmarPagamento → pago
+    // pago → no botão"Chegou" na navegar tela real, até aqui chama atencio alternativa
     const mapa = {
-      aguardando_pagamento: 'pago',
+      aguardando_pagamento: 'aguardando_retirada',
       pago: 'aguardando_retirada',
       aguardando_retirada: 'em_preparo',
       em_preparo: 'pronto',
       pronto: 'entregue',
     };
+
     const proximo = mapa[statusAtual];
     if (!proximo) return;
 
-    // Se é "fez pagamento", mesma rota
     if (statusAtual === 'aguardando_pagamento') {
       try {
-        await pedidoConfirmarPagamento(id);
+        await api.atualizarStatus(id, 'pago');
+        await pedidoConfirmarPagamento(id); // WhatsApp notification
+        carregar();
         return;
       } catch { /* silenciar */ }
-      return;
     }
 
     try {
@@ -303,7 +321,7 @@ export default function FilaPedidos() {
                 </div>
 
                 <button
-                  onClick={() => avancarStatus(p.id, p.status)}
+                  onClick={() => avancarStatus(p.id, p.status, p.origem, p.pagamento_tipo)}
                   disabled={!['aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto'].includes(p.status)}
                   className={`px-4 py-2 rounded-xl font-medium text-sm transition whitespace-nowrap ${
                     ['aguardando_pagamento', 'pago', 'aguardando_retirada', 'em_preparo', 'pronto'].includes(p.status)
@@ -311,12 +329,11 @@ export default function FilaPedidos() {
                       : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                   }`}
                 >
-                  {p.status === 'aguardando_pagamento' && 'Confirmar Pagamento'}
+                  {p.status === 'aguardando_pagamento' && (p.origem === 'balcao' ? 'Iniciar Preparo' : 'Confirmar Pagamento')}
                   {p.status === 'pago' && 'Cliente Chegou?'}
                   {p.status === 'aguardando_retirada' && 'Iniciar Preparo'}
                   {p.status === 'em_preparo' && 'Marcar Pronto'}
-                  {p.status === 'pronto' && 'Entregue! ✓'}
-                  {p.status === 'entregue' && 'Entregue ✓'}
+                  {p.status === 'pronto' && 'Entregue ✓'}
                   {p.status === 'cancelado' && 'Cancelado'}
                 </button>
               </div>
