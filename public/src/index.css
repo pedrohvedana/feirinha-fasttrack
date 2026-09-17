@@ -1,17 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+/* Feirinha Fast Track - Sistema de Fila Inteligente */
+/* Huguenote: comentário para forçar build diferente */
+/* cache-bust: v1.0.2 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
 /* Base */
 :root {
   --color-primary: #0891B2;
-  --color-primary-dark: #0E7490;
   --color-accent: #16A34A;
   --color-bg: #F0FDFA;
-  --color-card: #FFFFFF;
-  --color-muted: #E8F1F6;
-  --color-muted-fg: #475569;
-  --color-destructive: #DC2626;
-  --color-warning: #F59E0B;
+  --font-family: 'Inter', system-ui, sans-serif;
 }
 
 body {
@@ -19,46 +17,12 @@ body {
   background-color: #F0FDFA;
 }
 
-/* Status colors (badge) */
-.badge { padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; letter-spacing: .02em; }
+/* Status badges */
+.badge { padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
 .badge-waiting { background: #FEF3C7; color: #B45309; }
 .badge-paid { background: #DBEAFE; color: #1D4ED8; }
 .badge-arrived { background: #F3E8FF; color: #7C3AED; }
-.badge-preparing { background: #FED7AA; color: #9A3412; }
+.badge-preparing { background: #FED7AA; color: #C2410C; }
 .badge-ready { background: #D1FAE5; color: #047857; }
 .badge-done { background: #E5E7EB; color: #4B5563; }
 .badge-canceled { background: #FECACA; color: #B91C1C; }
-
-/* Cards */
-.card { background: #fff; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-.card-header { border-bottom: 1px solid #F1F5F9; padding: 1.25rem; }
-
-/* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; border-radius: 14px; font-weight: 600; transition: all 0.15s; cursor: pointer; }
-.btn:active { transform: scale(0.97); }
-
-.btn-primary { background: #0891B2; color: #fff; }
-.btn-primary:hover { background: #0E7490; }
-
-.btn-accent { background: #16A34A; color: #fff; }
-.btn-accent:hover { background: #15803d; }
-
-.btn-outline { border: 2px solid #E2E8F0; background: #fff; color: #334155; }
-.btn-outline:hover { background: #F1F5F9; }
-
-.btn-danger { color: #DC2626; }
-
-/* Inputs */
-.input { padding: 12px 16px; border: 2px solid #E2E8F0; border-radius: 12px; font-size: 16px; transition: border-color 0.15s; }
-.input:focus { border-color: #0891B2; outline: none; box-shadow: 0 0 0 3px rgba(8,145,178,0.15); }
-
-/* Responsive */
-@page { size: auto; margin: 0; }
-
-@media (max-width: 768px) {
-  .hide-mobile { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-}

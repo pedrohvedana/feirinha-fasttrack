@@ -1,3 +1,6 @@
+// Build timestamp: 2025-09-17
+// Agora inclui 'pronto' no botão - ajuste deploy forcea parts
+/* eslint-disable-next-line no-unused-vars */
 import { useState, useEffect, useRef } from 'react';
 import { api } from '../api';
 import { Link } from 'react-router-dom';
