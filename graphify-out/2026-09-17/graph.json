@@ -4,114 +4,15 @@
   "graph": {},
   "nodes": [
     {
-      "label": "Cozinha.jsx",
-      "file_type": "code",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_pages_cozinha",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "cozinha.jsx"
-    },
-    {
-      "label": "STATUS_COLORS",
-      "file_type": "code",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "public_src_pages_cozinha_status_colors",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_colors"
-    },
-    {
-      "label": "STATUS_LABELS",
-      "file_type": "code",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "public_src_pages_cozinha_status_labels",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_labels"
-    },
-    {
-      "label": "TEMPO_CORES",
-      "file_type": "code",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "public_src_pages_cozinha_tempo_cores",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "tempo_cores"
-    },
-    {
-      "label": "Cozinha()",
-      "file_type": "code",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L31",
-      "_origin": "ast",
-      "id": "public_src_pages_cozinha_cozinha",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "cozinha()"
-    },
-    {
-      "label": "FilaPedidos.jsx",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "filapedidos.jsx"
-    },
-    {
-      "label": "STATUS_COLORS",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_status_colors",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_colors"
-    },
-    {
-      "label": "STATUS_LABELS",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_status_labels",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "status_labels"
-    },
-    {
-      "label": "FilaPedidos()",
-      "file_type": "code",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "public_src_pages_filapedidos_filapedidos",
-      "community": 1,
-      "community_name": "App.jsx",
-      "norm_label": "filapedidos()"
-    },
-    {
       "label": "pedidos.ts",
       "file_type": "code",
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedidos.ts",
-      "id": "api_src_routes_pedidos"
+      "norm_label": "pedidos.ts"
     },
     {
       "label": "Bindings",
@@ -119,10 +20,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_bindings",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "bindings",
-      "id": "api_src_routes_pedidos_bindings"
+      "norm_label": "bindings"
     },
     {
       "label": "Pedido",
@@ -130,10 +31,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_pedido",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedido",
-      "id": "api_src_routes_pedidos_pedido"
+      "norm_label": "pedido"
     },
     {
       "label": "pedidosRouter",
@@ -141,10 +42,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_pedidosrouter",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "pedidosrouter",
-      "id": "api_src_routes_pedidos_pedidosrouter"
+      "norm_label": "pedidosrouter"
     },
     {
       "label": "normalizarValor()",
@@ -152,10 +53,10 @@
       "source_file": "api/src/routes/pedidos.ts",
       "source_location": "L72",
       "_origin": "ast",
+      "id": "api_src_routes_pedidos_normalizarvalor",
       "community": 0,
       "community_name": "services/whatsapp.ts",
-      "norm_label": "normalizarvalor()",
-      "id": "api_src_routes_pedidos_normalizarvalor"
+      "norm_label": "normalizarvalor()"
     },
     {
       "label": "PedidoForm.jsx",
@@ -163,10 +64,10 @@
       "source_file": "public/src/pages/PedidoForm.jsx",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "public_src_pages_pedidoform",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "pedidoform.jsx",
-      "id": "public_src_pages_pedidoform"
+      "norm_label": "pedidoform.jsx"
     },
     {
       "label": "PAGAMENTO_LABELS",
@@ -174,10 +75,10 @@
       "source_file": "public/src/pages/PedidoForm.jsx",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "public_src_pages_pedidoform_pagamento_labels",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "pagamento_labels",
-      "id": "public_src_pages_pedidoform_pagamento_labels"
+      "norm_label": "pagamento_labels"
     },
     {
       "label": "PedidoForm()",
@@ -185,10 +86,10 @@
       "source_file": "public/src/pages/PedidoForm.jsx",
       "source_location": "L11",
       "_origin": "ast",
+      "id": "public_src_pages_pedidoform_pedidoform",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "pedidoform()",
-      "id": "public_src_pages_pedidoform_pedidoform"
+      "norm_label": "pedidoform()"
     },
     {
       "label": "PedidoRastreio.jsx",
@@ -196,10 +97,10 @@
       "source_file": "public/src/pages/PedidoRastreio.jsx",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "public_src_pages_pedidorastreio",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "pedidorastreio.jsx",
-      "id": "public_src_pages_pedidorastreio"
+      "norm_label": "pedidorastreio.jsx"
     },
     {
       "label": "STATUS_CONFIG",
@@ -207,10 +108,10 @@
       "source_file": "public/src/pages/PedidoRastreio.jsx",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "public_src_pages_pedidorastreio_status_config",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "status_config",
-      "id": "public_src_pages_pedidorastreio_status_config"
+      "norm_label": "status_config"
     },
     {
       "label": "PedidoRastreio()",
@@ -218,10 +119,54 @@
       "source_file": "public/src/pages/PedidoRastreio.jsx",
       "source_location": "L16",
       "_origin": "ast",
+      "id": "public_src_pages_pedidorastreio_pedidorastreio",
       "community": 1,
       "community_name": "App.jsx",
-      "norm_label": "pedidorastreio()",
-      "id": "public_src_pages_pedidorastreio_pedidorastreio"
+      "norm_label": "pedidorastreio()"
+    },
+    {
+      "label": "FilaPedidos.jsx",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "filapedidos.jsx",
+      "id": "public_src_pages_filapedidos"
+    },
+    {
+      "label": "STATUS_COLORS",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_colors",
+      "id": "public_src_pages_filapedidos_status_colors"
+    },
+    {
+      "label": "STATUS_LABELS",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_labels",
+      "id": "public_src_pages_filapedidos_status_labels"
+    },
+    {
+      "label": "FilaPedidos()",
+      "file_type": "code",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "filapedidos()",
+      "id": "public_src_pages_filapedidos_filapedidos"
     },
     {
       "label": "formatters.js",
@@ -277,6 +222,61 @@
       "community_name": "App.jsx",
       "norm_label": "fmttempo()",
       "id": "public_src_lib_formatters_fmttempo"
+    },
+    {
+      "label": "Cozinha.jsx",
+      "file_type": "code",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "cozinha.jsx",
+      "id": "public_src_pages_cozinha"
+    },
+    {
+      "label": "STATUS_COLORS",
+      "file_type": "code",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_colors",
+      "id": "public_src_pages_cozinha_status_colors"
+    },
+    {
+      "label": "STATUS_LABELS",
+      "file_type": "code",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "status_labels",
+      "id": "public_src_pages_cozinha_status_labels"
+    },
+    {
+      "label": "TEMPO_CORES",
+      "file_type": "code",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "tempo_cores",
+      "id": "public_src_pages_cozinha_tempo_cores"
+    },
+    {
+      "label": "Cozinha()",
+      "file_type": "code",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.jsx",
+      "norm_label": "cozinha()",
+      "id": "public_src_pages_cozinha_cozinha"
     },
     {
       "label": "migrations_chatbot.sql",
@@ -4684,251 +4684,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "public_src_app",
-      "target": "public_src_pages_cozinha"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_api_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_lib_formatters",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_lib_formatters_fmtpreco",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_pages_cozinha_cozinha",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_pages_cozinha_status_colors",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_pages_cozinha_status_labels",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/Cozinha.jsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_cozinha",
-      "target": "public_src_pages_cozinha_tempo_cores",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "public_src_app",
-      "target": "public_src_pages_cozinha_cozinha"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "public_src_app",
-      "target": "public_src_pages_filapedidos"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_api_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_auth_useauth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_filapedidos",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_status_colors",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/pages/FilaPedidos.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "public_src_pages_filapedidos",
-      "target": "public_src_pages_filapedidos_status_labels",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "public/src/App.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "public_src_app",
-      "target": "public_src_pages_filapedidos_filapedidos"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "api/src/app.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -4944,9 +4699,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_bindings"
+      "target": "api_src_routes_pedidos_bindings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4955,9 +4710,9 @@
       "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_normalizarvalor"
+      "target": "api_src_routes_pedidos_normalizarvalor",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4966,9 +4721,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_pedido"
+      "target": "api_src_routes_pedidos_pedido",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4977,9 +4732,9 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_routes_pedidos_pedidosrouter"
+      "target": "api_src_routes_pedidos_pedidosrouter",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -4989,9 +4744,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_pix"
+      "target": "api_src_services_pix",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5001,9 +4756,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_pix_criarcobrancapix"
+      "target": "api_src_services_pix_criarcobrancapix",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5013,9 +4768,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp"
+      "target": "api_src_services_whatsapp",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5025,9 +4780,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_enviarmensagem"
+      "target": "api_src_services_whatsapp_enviarmensagem",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5037,9 +4792,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagemempreparo"
+      "target": "api_src_services_whatsapp_mensagemempreparo",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5049,9 +4804,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagempagamentoconfirmado"
+      "target": "api_src_services_whatsapp_mensagempagamentoconfirmado",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5061,9 +4816,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "api_src_routes_pedidos",
-      "target": "api_src_services_whatsapp_mensagempronto"
+      "target": "api_src_services_whatsapp_mensagempronto",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5097,9 +4852,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidoform",
-      "target": "public_src_api"
+      "target": "public_src_api",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5109,9 +4864,9 @@
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidoform",
-      "target": "public_src_api_api"
+      "target": "public_src_api_api",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5120,9 +4875,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidoform",
-      "target": "public_src_pages_pedidoform_pagamento_labels"
+      "target": "public_src_pages_pedidoform_pagamento_labels",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5131,9 +4886,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidoform",
-      "target": "public_src_pages_pedidoform_pedidoform"
+      "target": "public_src_pages_pedidoform_pedidoform",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5167,9 +4922,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_api"
+      "target": "public_src_api",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5179,9 +4934,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_api_api"
+      "target": "public_src_api_api",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5191,9 +4946,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_lib_formatters"
+      "target": "public_src_lib_formatters",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5203,9 +4958,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_lib_formatters_fmtpreco"
+      "target": "public_src_lib_formatters_fmtpreco",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5214,9 +4969,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_pages_pedidorastreio_pedidorastreio"
+      "target": "public_src_pages_pedidorastreio_pedidorastreio",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5225,9 +4980,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "public_src_pages_pedidorastreio",
-      "target": "public_src_pages_pedidorastreio_status_config"
+      "target": "public_src_pages_pedidorastreio_status_config",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5240,6 +4995,111 @@
       "confidence_score": 1.0,
       "source": "public_src_app",
       "target": "public_src_pages_pedidorastreio_pedidorastreio"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_app",
+      "target": "public_src_pages_filapedidos"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_api_api"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_auth_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_pages_filapedidos_filapedidos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_pages_filapedidos_status_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/FilaPedidos.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_filapedidos",
+      "target": "public_src_pages_filapedidos_status_labels"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_app",
+      "target": "public_src_pages_filapedidos_filapedidos"
     },
     {
       "relation": "contains",
@@ -5284,6 +5144,158 @@
       "confidence_score": 1.0,
       "source": "public_src_lib_formatters",
       "target": "public_src_lib_formatters_fmttempo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_lib_formatters"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_lib_formatters_fmtpreco"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "public_src_pages_cozinha_cozinha",
+      "target": "public_src_lib_formatters_fmtpreco"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_app",
+      "target": "public_src_pages_cozinha"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_api_api"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_auth_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_pages_cozinha_cozinha"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_pages_cozinha_status_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_pages_cozinha_status_labels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/pages/Cozinha.jsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_pages_cozinha",
+      "target": "public_src_pages_cozinha_tempo_cores"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "public_src_app",
+      "target": "public_src_pages_cozinha_cozinha"
     },
     {
       "relation": "contains",
@@ -10666,5 +10678,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "845d22c55b8b94c1e6f3f7976ed5e70a68b6108f"
+  "built_at_commit": "8bff02273bf0a108fabc701c0444192cdeef62c7"
 }

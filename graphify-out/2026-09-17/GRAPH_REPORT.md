@@ -1,16 +1,16 @@
-# Graph Report - feirinha-fasttrack  (2026-09-17)
+# Graph Report - feirinha-fasttrack  (2026-09-16)
 
 ## Corpus Check
-- 65 files · ~27,784 words
+- 65 files · ~27,668 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 425 nodes · 527 edges · 36 communities (28 shown, 8 thin omitted)
+- 425 nodes · 528 edges · 36 communities (28 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `845d22c5`
+- Built from commit: `8bff0227`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -169,7 +169,7 @@ Cohesion: 0.23
 Nodes (11): app, scheduled(), buscarCancelar(), buscarLembrar(), ExpiraPixConfig, ExpiraPixDeps, marcarCancelados(), marcarLembreteEnviado() (+3 more)
 
 ## Knowledge Gaps
-- **221 isolated node(s):** `STATUS_COLORS`, `STATUS_LABELS`, `TEMPO_CORES`, `STATUS_COLORS`, `STATUS_LABELS` (+216 more)
+- **221 isolated node(s):** `Bindings`, `Pedido`, `PAGAMENTO_LABELS`, `STATUS_CONFIG`, `STATUS_COLORS` (+216 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -180,12 +180,12 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `hono` connect `devDependencies` to `routes/whatsapp.test.ts`?**
   _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **What connects `STATUS_COLORS`, `STATUS_LABELS`, `TEMPO_CORES` to the rest of the system?**
+- **What connects `Bindings`, `Pedido`, `PAGAMENTO_LABELS` to the rest of the system?**
   _221 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `services/whatsapp.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.11290322580645161 - nodes in this community are weakly interconnected._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.08773784355179703 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08879492600422834 - nodes in this community are weakly interconnected._
 - **Should `public/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
 - **Should `Plan: Fluidez para Operador Solo` be split into smaller, more focused modules?**

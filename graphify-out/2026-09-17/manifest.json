@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/FilaPedidos.jsx": {
-    "mtime": 1789647549.5998423,
-    "ast_hash": "ca7c6e5ab4d0406bbb6f72da70a92ee9",
+    "mtime": 1789591179.4256282,
+    "ast_hash": "d8cbecfa9b662ad470006a5f8c373f96",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm.jsx": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "public/src/pages/Cozinha.jsx": {
-    "mtime": 1789647319.1508474,
-    "ast_hash": "9832a5dc630bdd7f54dee107db53485a",
+    "mtime": 1789577991.797297,
+    "ast_hash": "fcacaf9e8032f70f405320ae034ef77f",
     "semantic_hash": ""
   },
   "public/src/pages/PedidoForm2.jsx": {
